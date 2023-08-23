@@ -1,0 +1,142 @@
+Computer Science 470 and 570 at Northern Arizona University, Spring
+2023
+
+Topic: Artificial Intelligence.
+
+Dates: 18 Jan 2023 to 12 May 2023
+
+Meeting time/place: MoWeFr 9:10AM - 10:00AM, Eng 120. 
+
+Course materials adapted from [[https://www.cefns.nau.edu/~edo/Classes/CS470-570_WWW/][Dr. D's Spring 2018 offering]] and [[https://github.com/tdhock/cs470-570-spring-2021][my
+previous offering]].
+
+Syllabus: [[https://docs.google.com/document/d/1YScsJ_Z2C6CMNk90aOLmvzleOtReqiPcoa7iPPXzDYE/edit][Google Doc]].
+
+** Weekly schedule of homeworks
+
+Each homework must be submitted on bblearn as a single PDF report,
+with all of the code, results, and answers to questions.
+
+Please make sure that your report contains the commands and output as
+shown in [[https://www.cefns.nau.edu/~edo/Classes/CS470-570_WWW/Assignments/Prog1-Boggle/Phase1output.txt][this example output file]]. For each test command
+- There should be a >>> prompt followed by the test command,
+- followed by the output of that command (from print statements and/or
+  the return value),
+- followed by a newline (to provide visual separation between each
+  command). If you do sys.ps1='\n>>> ' then that will print a newline
+  before every command prompt.
+
+One way to do this is by simply running "python" which starts the
+interactive REPL, and then paste your code in (make sure your code
+does not have any empty lines in the middle of function/class
+definitions, and that you do have an empty line at the end of each
+function/class definition). A more automated way to do this (less
+tedious copy-pasting) is by running your python script through
+[[file:interpreter.py]], for example:
+
+#+begin_src shell-script
+$ python interpreter.py example_homework_code.py 
+
+
+>>> def add(x, y):
+...     result = x + y
+...     return result
+... 
+
+>>> # if you want to use interpreter.py, then only put empty line at the
+
+>>> # end of function/class definitions, as above (not inside of
+
+>>> # function/class definitions).
+
+>>> add(1, 2)
+3
+
+>>> add(3, 10)
+13
+#+end_src
+
+Each homework assignment is due on the Friday of the corresponding
+week, at 11:59PM. Homeworks will require use of python ([[https://github.com/tdhock/cs499-599-fall-2022/blob/main/installation.org][I recommend
+anaconda]]), I recommend using an IDE such as [[https://github.com/tdhock/cs499-599-fall-2022/blob/main/installation.org][emacs]] in which you can see the code, send lines interactively to the python interpreter with a keystroke (control-enter in emacs), and immediately see the results/output after running each line of code.
+
+- Jan 19: [[file:homeworks/01_python.org][Homework week 1: getting started with python]].
+- Jan 26: [[file:homeworks/02-04-boggle/02_boggle0.org][Homework week 2: Boggle part 0]]
+  - [[https://en.wikipedia.org/wiki/Boggle][Boggle wikipedia page]].
+  - [[file:slides/chapter1.pptx][Chapter 1 slides]].
+- Feb 2: [[file:homeworks/02-04-boggle/03_boggle1.org][Homework week 3: Boggle part 1]]
+  - [[file:slides/chapter2.pptx][Chapter 2 slides]].
+- Feb 9: [[file:homeworks/02-04-boggle/04_boggle2.org][Homework week 4: Boggle part 2]]
+  - [[file:slides/chapter3.1.pptx][Chapter 3.1 uninformed search slides]].
+  - Friday Feb 10: bring your boggle program to class to compete for
+    EXTRA CREDIT: fastest program that gets the right answer wins! (no
+    false positive words, no false negative words) put your program in
+    [[https://drive.google.com/drive/folders/1N6fSB7jQuJBkG1x3V-wvrRyNMG5IHICQ?usp=sharing][this google drive folder]].
+- Feb 16: [[file:homeworks/05-07-map/05_map0.org][Homework week 5: Route-finding part 0]]. 
+  - [[file:slides/chapter3.2.pptx][Chapter 3.2 informed search slides]].
+- Feb 23: [[file:homeworks/05-07-map/06_map1.org][Homework week 6: Route-finding part 1]].
+- Mar 2: [[file:homeworks/05-07-map/07_map2.org][Homework week 7: Route-finding part 2]].
+  - Fri Mar 3: no class, but please start working on practice mid-term
+    solutions.
+- Mar 9: week 8, no homework, [[file:exams.org][Mid-term review]] and exam.
+  - Mon Mar 6: review session: present your practice mid-term
+    solutions in class for extra credit on the actual mid-term exam.
+  - Weds Mar 8: mid-term exam.
+  - Fri Mar 10: no class.
+- Mar 16: spring break!
+- Mar 23: Homework week 9: [[https://github.com/tdhock/cs470-570-spring-2023/blob/master/homeworks/09-11-halma/README.org#part-0-deliverable-gui-and-moves-for-one-player][Halma part 0]].
+  - Mon Mar 20: route-finding extra credit tournament. fastest
+    program that gets the right answer wins! Bring your program on a
+    laptop /usb drive or put it in [[https://drive.google.com/drive/folders/1N6fSB7jQuJBkG1x3V-wvrRyNMG5IHICQ?usp=sharing][this google drive folder]].
+- Mar 30: Homework week 10: [[file:homeworks/09-11-halma/README.org][Halma part 1]].
+  - [[file:slides/chapter5.pptx][Slides ch5]].
+- Apr 6: Homework week 11: [[file:homeworks/09-11-halma/README.org][Halma part 2]].
+- Apr 13: Homework week 12: [[file:homeworks/12-14-image-classification/12_installation.org][Image classification part 0]]: installation
+  and visualizing images.
+  - [[file:installation.org][installation instructions]].
+  - [[https://raw.githubusercontent.com/tdhock/cs499-599-fall-2022/main/slides/01-intro-slides/slides.pdf][intro to machine learning slides]].
+  - [[file:slides/week13-linear-models.pdf][slides about learning a linear model using torch]].
+  - Mon Apr 10: extra credit Halma tournament! Bring a laptop with
+    your code to class to compete for extra credit points.
+  - Fri Apr 14: class cancelled, come to [[https://na.eventscloud.com/ehome/index.php?eventid=745717&][ASU West Machine Learning Day]].
+- Apr 20: [[file:homeworks/12-14-image-classification/13_torch.org][Homework week 13]]: Image classification part 1.
+  - Weds Apr 19: office hours cancelled, instead come to my talk
+    "Intro to Deep Learning in R" for [[https://researchbazaar.arizona.edu/resbaz/Arizona2023/][ResBaz AZ 2023]], 10:15-noon
+    DuBois Juniper, extra credit homework score.
+- Apr 27: [[file:homeworks/12-14-image-classification/14_torch.org][Homework week 14]]: Image classification part 2.
+  - [[https://raw.githubusercontent.com/tdhock/2023-res-baz-az/main/HOCKING-slides-short.pdf][slides with test accuracy figures]].
+- May 4: reading week, [[file:exams.org][exam review (questions 4-10)]] Weds May 3,
+  present your solution for 10 extra credit points toward your exam
+  score.
+- May 11: finals week, exam Weds May 10, 8-9:30.
+
+Homeworks will be graded using this [[https://docs.google.com/document/d/1-owd3uMexZKzdOib9R_CQrwke-BYkIq2-m6Sd1sFNVY/edit#heading=h.pekgvy78tviz][General Usage Rubric]]. 
+
+** Video Resources
+
+- [[https://drive.google.com/drive/folders/1pT_E2KcJO039mxK5c4aTVeVlnCwFdQeS?usp=sharing][Google Drive folder with videos from my Spring 2021 class]].
+
+** Textbook
+
+The optional readings will be from [[http://aima.cs.berkeley.edu/][Artificial Intelligence: A Modern
+Approach]] by Russell and Norvig.
+- [[https://arizona-nau-primo.hosted.exlibrisgroup.com/primo-explore/fulldisplay?docid=01NAU_ALMA21108980210003842&context=L&vid=01NAU&lang=en_US&search_scope=Everything&adaptor=Local%2520Search%2520Engine&tab=default_tab&query=any,contains,artificial%2520intelligence%2520a%2520modern%2520approach&mode=Basic][Dead tree book at Cline]] (on 4 hour reserve).
+- [[https://www.amazon.com/Artificial-Intelligence-Approach-Stuart-Russell/dp/9332543518][Amazon]]
+
+** Exercises
+
+[[https://aimacode.github.io/aima-exercises/][AIMA Exercises]]
+
+** Software
+
+*** pytorch 
+
+[[http://bartek-blog.github.io/python/pytorch/conda/2018/11/12/install-pytorch-with-conda.html][Tutorial explaining pytorch installation under anaconda]]. 
+
+The command I used to install was:
+
+#+begin_src shell-script
+conda install pytorch torchvision cpuonly -c pytorch
+#+end_src
+
+After that you should be able to do =import torch= in python.
