@@ -1,0 +1,74 @@
+** Programming
+
+Modify your program so that it reads the board and dictionary file
+names from sys.argv, so we should be able to run your program on the
+command line like:
+
+#+begin_src
+$ python boggle_solver.py board4.txt twl06.txt
+#+end_src
+
+The list of found words (one word per line) should be output to
+=board4_words.txt= -- this file will be used to evaluate the quality
+of your solution (false positives and false negatives), using
+[[file:04_judge.R]]. We will use several different boards, so your output
+file name should depend on the input file name.
+- So if there is another board file name, say =x.txt=, the output
+  should be saved to =x_words.txt= (not =board4_words.txt=).
+
+** Thinking questions
+
+As explained on our first day, this is NOT a "learning programming"
+class. This is the upper division, we can assume you all know very
+well how to program, so let's focus on the real meat. As real computer
+scientists, creating the code is incidental; what really interests us
+is using a program to explore the nature of a particular
+problem. Thus, the following write-up asks you to reflect on your
+experience in programming the solution, and use it to explore this
+problem more deeply. In keeping with our emphasis on thinking over
+programming, the write-up will be worth a substantial amount (up to
+50%) of the total points, so be sure to leave time for it in your time
+planning! Your write-up should be professionally neat, with clearly
+labeled answers to each of the following:
+
+- 1. A clear description of your algorithm, i.e., the
+  approach/strategy that your code takes in solving the problem.
+  Being able to clearly outline an algorithmic approach is a valuable
+  communication skill in our business, and demonstrates the extent to
+  which you truly understand what you're doing. Do NOT walk through
+  your functions/code in low-level detail! You need to describe how
+  your program solves the problem abstractly, as in the key features
+  of the approach and the steps the program goes through in executing
+  it.
+- 2. Answer to the following "thinking" questions. Professionally
+  present your answers to each as clear narrative interspersed with
+  graphs, figures, equations and whatever else you need.
+  - a. Observe your own results: Run your solver on several 4x4, 3x3,
+    and 2x2 boards (use [[file:04_generator.py][generator]]). How many different words did your
+    solver explore on each? How much time was taken on each. Now
+    analyze: Come up with a curve showing your results. Then use this
+    to predict the time/moves it would take to explore a 5x5 board.
+  - b. Analyze the problem generally: How many possible combinations
+    of letters (i.e. actual words or not) can be constructed from an
+    NxN board? Walk through your reasoning carefully, showing how your
+    value comes together. Let's keep it simple just to get a decent
+    upper bound without needing a PhD in combinatorics: Ignore
+    detailed paths possible on the board and just assume that every
+    letter on the board could be chained with every other letter on
+    the board...how many words could be made that way? How does your
+    analysis match up with your empirical findings in the last
+    question?
+  - c. Use your solver to solve at least 10-20 different boards, then
+    ponder the solution stats you got. Based clearly on your
+    observations, consider the following: Suppose there is a Boggle
+    competition where human players are given a sequence of boards to
+    solve, and the time they have to do so decreases with each board.
+    Now examine the outcomes from the boards that you've run your
+    solver on. What strategy for finding words would a "smart" (or as
+    we'll call it in this course, "rational") player employ to
+    maximize points in a time-limited time? Don't just speculate,
+    support your answer clearly with your empirical results!
+
+EXTRA CREDIT: Friday competition, 30, 20, 10 points extra for first
+(Michael Vertin), second (Nick Persley), third place (Gus Siegel) in terms of
+time. 5 points for participation (Alex Poole, Nick Ray, Logan Samstag).

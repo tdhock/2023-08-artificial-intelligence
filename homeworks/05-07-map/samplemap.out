@@ -1,0 +1,70 @@
+$ python interpreter.py 05_homework.py
+
+...
+
+>>> # (b) Show your program loading in the 30-node sample file. 
+
+>>> s=Searcher("samplemap.txt")
+Loaded search type A* with map in file: samplemap.txt
+
+>>> # (c) Show you program setting start node=U and end node=T. 
+
+>>> s.setStartGoal('U','T')
+
+>>> # myViz should be a DRDViz instance -> save map to file on disk.
+
+>>> s.myViz.save("samplemap.png")
+
+>>> # (d) Show the one open node.
+
+>>> [n.showBasic() for n in s.open]
+[('U', 120.93386622447825)]
+
+>>> # (e) Show successors of only open node.
+
+>>> initial_children = s.successors(s.open.pop(0))
+
+>>> [n.showBasic() for n in initial_children]
+[('AB', 125.56603957913983), ('AE', 148.86500705120545), ('AK', 152.8575902169843), ('AN', 128.72684879784524), ('AQ', 120.35580891098448), ('M', 185.7793358556512)]
+
+>>> 
+
+>>> # (f) Show three inserts: at the front, and the end, and "in order"
+
+>>> def reset_insert(where):
+...     s.reset()
+...     initial_children = s.successors(s.open.pop(0))
+...     insert_method = getattr(s, "insert_"+where)
+...     insert_method(initial_children)
+...     return [n.showBasic() for n in s.open]
+... 
+
+>>> reset_insert("front")
+[('M', 185.7793358556512), ('AQ', 120.35580891098448), ('AN', 128.72684879784524), ('AK', 152.8575902169843), ('AE', 148.86500705120545), ('AB', 125.56603957913983)]
+
+>>> reset_insert("end")
+[('AB', 125.56603957913983), ('AE', 148.86500705120545), ('AK', 152.8575902169843), ('AN', 128.72684879784524), ('AQ', 120.35580891098448), ('M', 185.7793358556512)]
+
+>>> reset_insert("ordered")
+[('AQ', 120.35580891098448), ('AB', 125.56603957913983), ('AN', 128.72684879784524), ('AE', 148.86500705120545), ('AK', 152.8575902169843), ('M', 185.7793358556512)]
+
+>>> 
+
+>>> # (g) INSERT (K,500), (C,91) and (J,10) and show no duplicates.
+
+>>> newdata = (("K",500), ("C",91), ("J",10))
+
+>>> newlist = [SNode(label=label, pathcost=pathcost) for label, pathcost in newdata]
+
+>>> ignored = s.insert_end(newlist)
+
+>>> [n.showBasic() for n in s.open]
+[('AQ', 120.35580891098448), ('AB', 125.56603957913983), ('AN', 128.72684879784524), ('AE', 148.86500705120545), ('AK', 152.8575902169843), ('M', 185.7793358556512), ('K', 500), ('C', 91), ('J', 10)]
+
+>>> 
+
+>>> # 3. hSLD heuritic function being called on three nodes.
+
+>>> [hSLD(x, s) for x in ("V", "AC", "J")]
+[37.107950630558946, 175.93464695732902, 25.495097567963924]
+

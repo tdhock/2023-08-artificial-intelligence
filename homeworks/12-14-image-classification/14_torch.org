@@ -1,0 +1,31 @@
+** Class: TorchLearnerCV
+
+This class should implement hyper-parameter learning (select the
+number of epochs which minimizes loss on validation set). This should
+have a fit method that splits train into subtrain and validation sets,
+then runs gradient descent and computes loss with respect to both sets
+at the end of each epoch.  After learning the best number of epochs
+using the validation set, you should re-run gradient descent on the
+entire train set using that number of epochs.
+
+** Experiments/application
+
+- Use 3-fold CV to define train/test splits, and compare your
+  TorchLearnerCV with the featureless baseline, in terms of test error/loss.
+- Run experiments on zip data.
+- Show a table of resulting test accuracy numbers, as well as a ggplot
+  similar to the slides.
+- Is your learner significantly more acurate than the featureless baseline?
+
+** Extra credit
+
+- Implement additional learners beyond the linear model (fully
+  connected neural network, convolutional neural network), +10EC for
+  each additional learner. Make sure to use a dictionary to store them
+  (keys=learner names, values=learner initialization functions), and
+  use a for loop over dictionary elements.
+- Implement additional data sets like MNIST (another digit image data
+  set) and Fashion-MNIST (ten clothing image classes), look at torch
+  docs to see how to access those data sets. Make sure to use a
+  dictionary to store them (keys=data set names, values=data sets),
+  and use a for loop over dictionary elements.

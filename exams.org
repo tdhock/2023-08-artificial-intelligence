@@ -1,0 +1,45 @@
+Practice exam questions
+
+1. We learned that an intelligent agent can be seen as being composed
+   of four interacting components (PEAS). Name the four components and
+   briefly describe what each does.
+
+2. For each of the following three task environments, give the six
+   attributes (observability, determinism, etc) with a brief
+   justification for each. (a) Poker, (b) route finding, (c)
+   chess.
+
+3. Given the [[https://www.cefns.nau.edu/~edo/Classes/CS470-570_WWW/Assignments/Prog2-RoadwarriorSearch/Grading/small_tester.html][simple test map]] from the route-finding homework, assume
+   we start at node F and want to get to node K. Give the order of the
+   first 10 nodes expanded by (a) breadth first search, and (b) depth
+   first search.  Break ties alphabetically (choose A before B, etc).
+
+4. Draw a game tree with depth 3, where each node has two
+   children. Assign these values from left to right in terminal nodes:
+   10, 5, 2, 8, 2, 1, 9, 6. Assign values to each non-terminal node,
+   assuming it is max's move. Working from left to right, write alpha
+   and beta values on each node. Draw an X over nodes which are pruned
+   using alpha-beta.
+
+5. Same as 4 but assume it is min's move.
+
+6. When using a matrix to represent machine learning inputs, what does
+   each row and column represent, in the case of image classification?
+
+7. When splitting data into train/test sets, what is the purpose of
+   each set? When splitting a train set into subtrain/validation sets,
+   what is the purpose of each set?
+
+8. In order to determine if any non-trivial predictive relationship
+   between inputs and output has been learned, a comparison with a
+   featureless baseline that ignores the inputs must be used. In the
+   case of image classification, how do you compute the featureless
+   baseline predictions?
+   
+9. How can you tell if machine learning model predictions are
+   underfitting or overfitting?
+
+10. In gradient descent learning with early stopping regularization,
+    how should the number of epochs/iterations be chosen?
+    
+

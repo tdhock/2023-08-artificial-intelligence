@@ -1,0 +1,7 @@
+*gz
+*pyc
+*demo.py
+boggle
+__pycache__
+*~
+*solution*

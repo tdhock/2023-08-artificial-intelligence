@@ -1,0 +1,63 @@
+Route-finding part 2
+
+After having coded the solution last week, now is the time to think
+about it, and analyze it.
+
+- 1. A brief description of your solution approach/strategy.
+  Introduce how you factored the problem (major classes and/or
+  functions) and what each of them does. You don't need to describe
+  every little helper function, just walk us through an overview of
+  how your code tackles the problem.
+- 2. Analyze the heuristic function that you developed for the A*
+  search. Is it admissible? (never over-estimates the path cost)
+  Analyze whether the h(n) is indeed admissible in one of the data
+  sets.
+- 3. So what is the difference between the algorithms? In which
+  situations does one work better than the others? Do some exploration
+  to generate some data to answer these questions by creating at least
+  two reasonably complex (>30 nodes) maps, using
+  [[file:graphmaker.py]]. Then do the following on each map:
+  - (a) Select five different start-goal combinations, choosing them
+    to be different from each other. Closer, farther, heavily
+    connected, on the edge, in the middle. The idea is that you're
+    trying to somehow get a spread of possible start-goal conditions.
+  - (b) Now run each of the algos on the map, for each of the
+    start-goal conditions. How long is the path found for each? (in
+    terms of path cost)
+  - (c) Now analyze the data you generated. Does one type of search
+    always do better? Or does it only tend to do better for certain
+    situations (e.g., close-by goals vs distant goals). 
+- Now let's bring this back to reality: describe a heuristic function
+  that Google Maps might actually use to generate routes. What are the
+  inputs? How does it calculate a score? Remember, this function gets
+  called *every time* a new search node is generated! Discuss the
+  compuational complexity of running your function...and speculate on
+  ways that Google might make this manageable.
+
+** Extra credit
+
+Implement a method that allows multiple goals, and show a run of your
+modified program, using [[file:07_tests.py]]. Hint: To implement multiple
+goals, you just have to compute the min over the goals.
+
+#+begin_src python
+>>> x=Searcher("50test.txt", searchType="A*", verbose=False)
+Loaded search type A* with map in file: 50test.txt
+
+>>> x.setStart('m')
+
+>>> x.setGoals('c', 'af', 'ak')
+
+>>> x.search()
+Success! Reached goal node AK with path: ['M', 'D', 'X', 'Q', 'AN', 'AO', 'AK']
+
+>>> x=Searcher("50test.txt", searchType="A*", verbose=False)
+Loaded search type A* with map in file: 50test.txt
+
+>>> x.setStart('m')
+
+>>> x.setGoals('c', 'af')
+
+>>> x.search()
+Success! Reached goal node AF with path: ['M', 'AI', 'T', 'AE', 'S', 'AB', 'AF']
+#+end_src

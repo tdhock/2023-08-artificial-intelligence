@@ -1,0 +1,21 @@
+Homework 1: getting started with python.
+
+The goal of this homework is to demonstrate you have basic python
+programming skills.
+
+1. Create a function =file_to_list_of_ints(filename)= which reads a
+   text file, and converts each item in that file to an integer, and
+   returns the resulting numbers in a list.
+
+2. Create a function =product(list_of_ints)= which computes the
+   product of all elements of the list (multiply all elements
+   together).
+
+3. Use the two functions to compute the product of the numbers in
+   [[file:01_data.txt]]. 
+
+4. Also have your program print the number of items in the list.
+
+Make sure to submit your results as a single PDF file with your code
+and corresponding output when you run it through the python
+interpreter.
