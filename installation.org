@@ -1,38 +1,25 @@
 
-To do the homeworks you need to use python; it is recommended to
-install/use [[https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html][anaconda/miniconda]], with either
-- one of the [[https://docs.anaconda.com/anaconda/user-guide/tasks/integration/index.html][IDEs described on the anaconda docs]], (for beginners,
-  choose one that you have used in the past), or
-- Visual Studio Code as described in the [[https://aeturrell.github.io/python4DS/introduction.html][python for data science
-  online book, Getting Started chapter]]. [[https://learn.microsoft.com/en-us/visualstudio/python/tutorial-working-with-python-in-visual-studio-step-00-installation?view=vs-2022][Official Microsoft Docs]].
-- emacs, which allows you to write/edit code without using the mouse,
-  and has great python support, including conda environments,
-  interactive execution, completion, ...
+To do the homeworks you need to use emacs and python; it is
+recommended to install/use [[https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html][anaconda/miniconda]],
+- emacs is the required IDE for the class. It allows you to write/edit
+  code without using the mouse, and has great python support,
+  including conda environments, interactive execution, completion, ...
   - [[https://www.youtube.com/playlist?list=PLwc48KSH3D1OeAHFQhWpd8Fz8rLhTaD7t][My emacs and python screencasts show you how to install emacs and
     configure it to work with python]].
   - [[https://www.gnu.org/software/emacs/download.html][Download and Install GNU Emacs]].
   - [[https://elpy.readthedocs.io/en/latest/introduction.html#installation][Installation instructions for Elpy, which is a python IDE for emacs]].
   - [[https://www.emacswiki.org/emacs/PythonProgrammingInEmacs][PythonProgrammingInEmacs on the emacswiki has instructions for
     setting up other emacs python IDEs]].
+- If you want to use a different IDE (not emacs), then you need to
+  come to office hours and show me that you can do interactive python
+  code execution in that other IDE. That means having one window with
+  python code, another window with python console, and you can use a
+  keyboard command to execute one or more lines of code at a time, and
+  immediately see the output in the console.
 
-** Instructions for conda (all students)
+** Instructions for conda
 
-After [[https://docs.conda.io/en/latest/miniconda.html][downloading conda]] you can install all packages for this class,
-same versions that I use, via:
-
-#+begin_src shell-script
-conda env create -f https://raw.githubusercontent.com/tdhock/cs499-599-fall-2022/master/environment.yml
-#+end_src
-
-OR (less memory usage):
-
-#+begin_src shell-script
-conda env create -f https://raw.githubusercontent.com/tdhock/cs499-599-fall-2022/master/environment-p39only.yml
-pip install torchtext plotnine numpy pandas pillow scikit-image
-#+end_src
-
-That should create a new "cs499f22" python environment with the
-required packages. Before you activate an environment, you need to
+After [[https://docs.conda.io/en/latest/miniconda.html][downloading conda]], and before you activate an environment, you need to
 setup your shell for the first time.
 
 #+begin_src shell-script
@@ -43,16 +30,23 @@ That should put some code in your ~/.bash_profile, I had to copy it to
 my ~/.bashrc to get it to work on my setup (git bash in emacs shell on
 windows). After restarting your shell you should see a (base) prefix
 in your prompt, which indicates the name of the currently activated
-conda environment.  You can activate another environment via
+conda environment.  
+
+After that, you can install python, with the same version that I use,
+via:
 
 #+begin_src shell-script
-conda activate cs499f22
+  conda create -n 2023-08-artificial-intelligence
+  conda activate 2023-08-artificial-intelligence
+  conda install python=3.11.4
 #+end_src
 
+That should create and activate a new conda environment with the
+required python version.
 After activation, that environment will be used for new python
 processes, looking for python modules, etc.
 
-** Python support in emacs (only students who want to use emacs)
+** Python support in emacs
 
 First of all, if this is your first time ever using emacs, please type
 C-h t (type h while holding down control, then let go of control and

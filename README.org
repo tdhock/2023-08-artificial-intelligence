@@ -55,13 +55,13 @@ $ python interpreter.py example_homework_code.py
 #+end_src
 
 Each homework assignment is due on the Friday of the corresponding
-week, at 11:59PM. Homeworks will require use of python ([[https://github.com/tdhock/cs499-599-fall-2022/blob/main/installation.org][I recommend
-anaconda]]), and [[https://github.com/tdhock/cs499-599-fall-2022/blob/main/installation.org][emacs]], in which you can see the code, send lines
+week, at 11:59PM. Homeworks will require use of python and emacs, [[file:installation.org][see
+my installation guide here]] in which you can see the code, send lines
 interactively to the python interpreter with a keystroke
 (control-enter in emacs), and immediately see the results/output after
 running each line of code.  (if you want to use another editor, you
-must come to office hours and show me that you can do interactive
-code execution)
+must come to office hours and show me that you can do interactive code
+execution)
 
 - Aug 28: [[file:homeworks/01_python.org][Homework week 1: getting started with python]].
 - Sep 4: [[file:homeworks/02-04-boggle/02_boggle0.org][Homework week 2: Boggle part 0]], Labor day holiday Sep 4.
@@ -104,7 +104,7 @@ code execution)
 - Dec 4: reading week, [[file:exams.org][exam review (questions 4-10)]] TODO DATE,
   present your solution for 10 extra credit points toward your exam
   score.
-- Dec 11: finals week, exam TODO DATE.
+- Finals week, exam TODO DATE.
 
 Homeworks will be graded using this [[https://docs.google.com/document/d/1-owd3uMexZKzdOib9R_CQrwke-BYkIq2-m6Sd1sFNVY/edit#heading=h.pekgvy78tviz][General Usage Rubric]]. 
 
