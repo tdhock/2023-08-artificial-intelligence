@@ -95,3 +95,24 @@ https://elpy.readthedocs.io/en/latest/ide.html for more elpy key
 commands (sending code from python code files to the interactive
 shell), and https://realpython.com/emacs-the-best-python-editor/ for a
 nice tutorial about emacs and python.
+
+** FAQ
+
+If you are having any issues with your conda environment, make sure to
+always use forward slash for paths in .emacs (never backslash, even on
+windows). 
+
+If you see an error like below in the python minibuffer, 
+#+begin_src
+error in process sentinel: elpy-rpc--default-error-callback: peculiar error: "exited abnormally with code 1"
+error in process sentinel: peculiar error: "exited abnormally with code 1"
+#+end_src
+then check your PATH (in emacs, M-x getenv PATH), make sure that conda
+is on it. For example on windows my PATH looks like
+
+#+begin_src
+C:\Users\th798\Miniconda3;C:\Users\th798\Miniconda3\Library\mingw-w64\bin;C:\Users\th798\Miniconda3\Library\usr\bin;C:\Users\th798\Miniconda3\Library\bin;C:\Users\th798\Miniconda3\Scripts;C:\Users\th798\AppData\Local\Continuum\anaconda3;C:\Users\th798\AppData\Local\Continuum\anaconda3\Library\mingw-w64\bin;C:\Users\th798\AppData\Local\Continuum\anaconda3\Library\usr\bin;C:\Users\th798\AppData\Local\Continuum\anaconda3\Library\bin;C:\Users\th798\AppData\Local\Continuum\anaconda3\Scripts;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;C:\Users\th798\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\th798\AppData\Local\Microsoft\WinGet\Packages\Hugo.Hugo.Extended_Microsoft.Winget.Source_8wekyb3d8bbwe;%USERPROFILE%\go\bin
+#+end_src
+
+
+
