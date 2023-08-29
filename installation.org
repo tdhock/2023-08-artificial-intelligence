@@ -116,3 +116,7 @@ C:\Users\th798\Miniconda3;C:\Users\th798\Miniconda3\Library\mingw-w64\bin;C:\Use
 
 If you do not have conda on your path, try re-installing and check the box that says to add it to your PATH.
 
+*** M1 mac conda issues
+
+If conda does not want to install, just install the official python
+distribution and use pip to install packages instead of conda.
