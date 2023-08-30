@@ -16,6 +16,11 @@ programming skills.
 
 4. Also have your program print the number of items in the list.
 
-Make sure to submit your results as a single PDF file with your code
-and corresponding output when you run it through the python
-interpreter.
+5. Take a screenshot of your emacs window, split in two, after having
+   run the code line by line using C-RET. Top window should be your
+   python script file (hw1.py), bottom window should be the python
+   console with prompt (>>>) and output after running your code.
+
+Make sure to submit your results as a single PDF file with your
+screenshot, code and corresponding output when you run it through the
+python interpreter.
