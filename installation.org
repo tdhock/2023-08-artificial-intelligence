@@ -85,7 +85,7 @@ with python code, and my conda environments, I put the following in my
 Make sure to change the path above from "~/miniconda3" to 
 wherever you have installed miniconda, then again restart emacs.
 In emacs When editing a python file we can "activate" the conda
-environment via M-x conda-env-activate RET cs499f22 RET then C-c C-z
+environment via M-x conda-env-activate RET 2023-08-artificial-intelligence RET then C-c C-z
 to get an interactive shell, then
 - C-RET to send line and step,
 - C-c to send highlighted region.
