@@ -85,7 +85,7 @@ with python code, and my conda environments, I put the following in my
 Make sure to change the path above from "~/miniconda3" to 
 wherever you have installed miniconda, then again restart emacs.
 In emacs When editing a python file we can "activate" the conda
-environment via M-x conda-env-activate RET cs499f22 RET then C-c C-z
+environment via M-x conda-env-activate RET 2023-08-artificial-intelligence RET then C-c C-z
 to get an interactive shell, then
 - C-RET to send line and step,
 - C-c to send highlighted region.
@@ -114,9 +114,19 @@ is on it. For example on windows my PATH looks like
 C:\Users\th798\Miniconda3;C:\Users\th798\Miniconda3\Library\mingw-w64\bin;C:\Users\th798\Miniconda3\Library\usr\bin;C:\Users\th798\Miniconda3\Library\bin;C:\Users\th798\Miniconda3\Scripts;C:\Users\th798\AppData\Local\Continuum\anaconda3;C:\Users\th798\AppData\Local\Continuum\anaconda3\Library\mingw-w64\bin;C:\Users\th798\AppData\Local\Continuum\anaconda3\Library\usr\bin;C:\Users\th798\AppData\Local\Continuum\anaconda3\Library\bin;C:\Users\th798\AppData\Local\Continuum\anaconda3\Scripts;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;C:\Users\th798\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\th798\AppData\Local\Microsoft\WinGet\Packages\Hugo.Hugo.Extended_Microsoft.Winget.Source_8wekyb3d8bbwe;%USERPROFILE%\go\bin
 #+end_src
 
-If you do not have conda on your path, try re-installing and check the box that says to add it to your PATH.
+If you do not have conda on your path, try re-installing and check the
+box that says to add it to your PATH.
 
 *** M1 mac conda issues
 
 If conda does not want to install, just install the official python
 distribution and use pip to install packages instead of conda.
+
+*** windows python not found error 
+
+On windows "Process Python exited abnormally with code 49" error, fix
+by (1) M-x conda-env-activate, and/or (2)
+
+#+begin_src elisp
+  (setq python-shell-interpreter "python");not "python3" !
+#+end_src
