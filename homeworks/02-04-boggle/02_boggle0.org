@@ -27,10 +27,12 @@ of the game is to make words out of these letters by traversing
 adjacent (horizontal, vertical or diagonal) tiles.  This "chain" of
 letters may snake all over the board, but you can only use each tile
 once, i.e., no fair using the same letter twice in a word. In a fixed
-amount of time players must make as many words as possible. Words are
-then scored as follows: 1 point for each 3-4 letter word, 2 points for
-a 5-letter word, 3 points for a 6-letter word, 5 points for a 7-letter
-word, 11 points for a 8 (or more)-letter word.
+amount of time players must make as many words as possible (or, try to
+get the right answer in the smallest amount of time). Words are then
+scored as follows: 1 point for each 3-4 letter word, 2 points for a
+5-letter word, 3 points for a 6-letter word, 5 points for a 7-letter
+word, 11 points for a 8 (or more)-letter word. (we won't worry about
+the points though)
 
 ** The Assignment: Overview
 
@@ -39,12 +41,12 @@ whatever way you can (go Fred Flintstone!): given a particular boggle
 board as input, your algorithm should enumerate all possible words
 that can be found in that Boggle board.
 
-The dictionary we will use for our game of Boggle is the Tournament
-Scrabble Wordlist which includes 178,691 words.  I've cleaned up and
+The dictionary we will use for our game of Boggle is the [[file:twl06.txt][Tournament
+Scrabble Wordlist]] which includes 178,691 words.  I've cleaned up and
 provided a file of dictionary words for you here.
 
 Your program should be given a dictionary and an NxN boggle board
-(either in command line or program params, up to you).  It should then
+(on command line arguments).  It should then
 run and discover all possible words existing in the given board and
 print out a summary of its findings.
 
@@ -64,7 +66,7 @@ print out a summary of its findings.
 - A boggle board file will consist of N lines of N letters separated
   by spaces. You should ignore extra space at the end of the line or
   extra newlines at the end of a file.  (Hint: check out the python
-  strip() function)
+  strip() function/method)
 - Your solver should be able to take in whatever NxN board size you
   pass it, simply deducing the board size from the given board input
   file. A solid algorithm will work just as well on 2x2 boards as on
@@ -110,15 +112,18 @@ the right track...
 ** Part 0 Deliverables
 
 - You must use this [[file:board.txt]] and [[file:twl06.txt]] as your input files.
-- A =loadBoard(filename)= function that takes the filename of a board file, and
-  loads that in to work on --- returns a new board data structure (NxN
-  matrix). Obviously you'll call this right at the start.
-- A =printBoard(board_object)= function. Takes in a reference to a loaded board data
-  structure (an NxN matrix) and prints it out. Simple.
-- A =possibleMoves(xy_pair, board_object)= function. Takes in a current position (just an x-y
-  pair) and a boggle board and generates all possible next positions
-  (x-y pairs in a list, set, or whatever you decide).
-- Download [[file:02_test.py]] and put your implementations of the three
+- A =loadBoard(filename)= function that takes the filename of a board
+  file, and loads that in to work on --- returns a new board data
+  structure (NxN matrix, represented as list of lists). Obviously
+  you'll call this right at the start.
+- A =printBoard(board_object)= function. Takes in a reference to a
+  loaded board data structure (an NxN matrix) and prints it
+  out. Simple.
+- A =possibleMoves(xy_pair, board_object)= function. Takes in a
+  current position (just an x-y pair) and a boggle board and generates
+  all possible next positions (x-y pairs in a list, set, or whatever
+  you decide).
+- Download [[file:02_tests.py]] and put your implementations of the three
   functions at the top. Running it should give output like this:
   [[file:02_test.txt]].
 - Submit a single PDF file that includes prompt, input/output for each
