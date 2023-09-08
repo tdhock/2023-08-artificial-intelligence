@@ -111,7 +111,8 @@ the right track...
 
 ** Part 0 Deliverables
 
-- You must use this [[file:board.txt]] and [[file:twl06.txt]] as your input files.
+- You must use this [[file:board.txt]] and [[file:twl06.txt]] (dictionary) as
+  your input files.
 - A =loadBoard(filename)= function that takes the filename of a board
   file, and loads that in to work on --- returns a new board data
   structure (NxN matrix, represented as list of lists). Obviously
@@ -121,8 +122,22 @@ the right track...
   out. Simple.
 - A =possibleMoves(xy_pair, board_object)= function. Takes in a
   current position (just an x-y pair) and a boggle board and generates
-  all possible next positions (x-y pairs in a list, set, or whatever
-  you decide).
+  all possible next positions (x-y pairs in a list). Hint: the tricky
+  part of writing this function will be avoiding minus points on the
+  general usage rubric. Remember you are not supposed to repeat logic
+  (no copy-pasted code blocks, instead use a for loop). In this case
+  we want to enumerate adjacent positions, and check boundaries, with
+  respect to both the x/horizontal and y/vertical axes, so since this
+  logic is the same for both axes, you should use a for loop over
+  those two axes (no need for variables named x_offset, y_offset,
+  etc). Some tools which should help
+  - define OFFSETS = [-1,0,1] are the offsets with respect to current
+    position, for both x and y axes.
+  - tuple addition (1,2)+(3,4) == (1,2,3,4) not (3,6)
+  - for loop over zip(tuple_of_offsets, tuple_of_positions) so you can
+    have the same logic for x and y axes.
+  - x_pos, y_pos = xy_tup (unpacking)
+- You can create more functions to help, if you like.
 - Download [[file:02_tests.py]] and put your implementations of the three
   functions at the top. Running it should give output like this:
   [[file:02_test.txt]].
