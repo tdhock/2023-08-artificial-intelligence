@@ -20,18 +20,18 @@ An =examineState(myBoard, position, path, myDict)= function that takes in a
 boggle board, a current position, a path up to that position, and a
 dictionary. It adds the current position's tile to the path, computes
 the word now formed by that path, and returns a tuple of (<current
-word generated>, <yes/no depending on whether that word is in
+word generated>, <True/False depending on whether that word is in
 dictionary>).
 
 #+begin_src python
 >>> examineState(myBoard, (0,3), ((1,1),(0,1),(0,2)), myDict)
-('mopy', 'Yes')
+('mopy', True)
 
 >>> examineState(myBoard, (0,0), ((3,3),(2,2),(1,1)), myDict)
-('uemj', 'No')
+('uemj', False)
 
 >>> examineState(myBoard,(3,3),( (2,2),(2,1),(2,0),(3,0),(3,1),(3,2) ) ,myDict)
-('efxpgvu', 'No')
+('efxpgvu', False)
 #+end_src
 
 A =runBoard(board_filename,dictionary_filename)= function which
@@ -65,3 +65,10 @@ AB, AD, ADD, ADDAX, ADMIX, AI, AID, AIM, AN, AND, AW, AX, BA, BAD, BI, BID, DAB,
 
 [[file:03_test.py]]
 
+** FAQ
+
+When is a for loop preferable over a list comprehension? List
+comprehensions can be preferable for simple cases (one return value,
+fits on one line of code), but for loops should be preferred for more
+complex cases (several values to build in for loop, not easy to fit on
+one line of code).
