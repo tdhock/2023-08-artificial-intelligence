@@ -71,3 +71,18 @@ labeled answers to each of the following:
 
 EXTRA CREDIT: Friday competition, 30, 20, 10 points extra for first,
 second, third place in terms of time. 5 points for participation.
+Top 5: Chen, Salazar, Bauck, Perez, Mccauslin.
+Participants: Babb, griepp, hallemeyer, Karlsson, kirk, parham, smith.
+
+#+begin_src R
+ [1] "04_judge/bauck.py"         "04_judge/borneman.py"     
+ [3] "04_judge/bruce_chen.py"    "04_judge/Chase_babb.py"   
+ [5] "04_judge/constant.py"      "04_judge/empty.py"        
+ [7] "04_judge/error.py"         "04_judge/griepp.py"       
+ [9] "04_judge/hallemeyer.py"    "04_judge/Karlsson.py"     
+[11] "04_judge/kirk.py"          "04_judge/mccauslin.py"    
+[13] "04_judge/parham.py"        "04_judge/perez.py"        
+[15] "04_judge/salazar.py"       "04_judge/smith.py"        
+[17] "04_judge/_SP23_Persley.py" "04_judge/_SP23_Poole.py"  
+[19] "04_judge/_SP23_Siegel.py"  "04_judge/_SP23_vertin.py" 
+#+end_src
