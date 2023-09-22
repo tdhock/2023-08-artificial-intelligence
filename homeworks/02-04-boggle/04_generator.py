@@ -8,8 +8,8 @@ N = the size of board desired
 outFile = name of desired output file
 '''
 
-N=int(sys.argv[1])
-outFile= sys.argv[2]
+script_py, N_str, outFile = sys.argv
+N=int(N_str)
 out = open(outFile,'w')
 
 

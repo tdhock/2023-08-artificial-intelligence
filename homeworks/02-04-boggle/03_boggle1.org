@@ -63,7 +63,7 @@ AB, AD, ADD, ADDAX, ADMIX, AI, AID, AIM, AN, AND, AW, AX, BA, BAD, BI, BID, DAB,
 
 ** Test file to modify
 
-[[file:03_test.py]]
+[[file:03_tests.py]]
 
 ** FAQ
 
