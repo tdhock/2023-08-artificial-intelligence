@@ -183,7 +183,7 @@ As you can see from the specs above, your program needs to provide certain outpu
 - The devil is in the details! The hardest function to implement correctly is the one INSERT function that inserts new siblings into the OPEN list. Be careful here: the OPEN list should at no point in the search contain the same node label twice. Your search may have found its way to a given node through multiple paths...but you will never keep more than one to explore next!
 - Graph creation and visualization tools. You don't actually need to vizualize the map to create your search solution...but doing so can be VERY useful for helping you to understand how various search algorithms are working...not to mention for noticing little bugs in your searcher's behavior. A nice tool for easily making new maps for your to explore is also useful; doing so visually beats trying to do so by writing up the textual map files by hand! To help you learn better, I've made you graph visualizer and creator tools; you are free to use them as you like. Find these tools here.
 
-** To turn in for part 1
+** To turn in for part 0
 
 A PDF on bblearn with the following items in exactly this order:
 
@@ -196,7 +196,7 @@ A PDF on bblearn with the following items in exactly this order:
   - (c) Show you program setting start node=U and end
     node=T. Accompany your console action with snapshot of the
     graphical map after this action, i.e., using the [[file:DRDViz.py][DRDViz]] tool.
-  - (d) Ask your program to show your OPEN list to see that indeed
+  - (d) Ask your program to show your OPEN/frontier list to see that indeed
     node U is in it. Your node.showBasic() method should print (label,
     value) for that node.
   - (e) You asking it to generate the SUCCESSOR (children) for node
@@ -215,7 +215,7 @@ A PDF on bblearn with the following items in exactly this order:
 - 4. Your richly commented and professionally presented code (maybe be
   duplex printed).
 
-Tests file with commands you should run: [[file:program2_tests1.py][program2_tests1.py]], sample
+Tests file with commands you should run: [[file:05_tests.py][05_tests.py]], sample
 [[file:samplemap.txt][input file]], sample [[file:samplemap.out][console output]], [[file:samplemap.png][map image output]].
 
 ** FAQ
