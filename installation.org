@@ -81,7 +81,7 @@ and to use "python" instead of "python3" I put the following in my
   (elpy-enable)
   (setq conda-anaconda-home (expand-file-name "~/miniconda3"))
   (setq conda-env-home-directory conda-anaconda-home)
-  (setq elpy-shell-starting-directory 'project-root)
+  (setq elpy-shell-starting-directory 'current-directory)
   (setq python-shell-interpreter "python");not "python3" !
 #+end_src
 
