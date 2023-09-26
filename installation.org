@@ -136,8 +136,17 @@ by (1) M-x conda-env-activate, and/or (2)
 
 *** How to use conda/bash from inside emacs on windows
 
-On windows the default shell is not bash, so if you want that, try
+On windows the default shell is not bash, so if you want that, try the following in ~/.emacs
 
 #+begin_src elisp
   (setq explicit-shell-file-name "C:/Program Files/Git/bin/bash.exe")
+#+end_src
+
+and the following in ~/.bashrc
+
+#+begin_src shell-script
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval "$('/c/Users/th798/Miniconda3/Scripts/conda.exe' 'shell.bash' 'hook')"
+# <<< conda initialize <<<
 #+end_src
