@@ -133,3 +133,11 @@ by (1) M-x conda-env-activate, and/or (2)
 #+begin_src elisp
   (setq python-shell-interpreter "python");not "python3" !
 #+end_src
+
+*** How to use conda/bash from inside emacs on windows
+
+On windows the default shell is not bash, so if you want that, try
+
+#+begin_src elisp
+  (setq explicit-shell-file-name "C:/Program Files/Git/bin/bash.exe")
+#+end_src
