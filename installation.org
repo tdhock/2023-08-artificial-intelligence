@@ -150,3 +150,7 @@ and the following in ~/.bashrc
 eval "$('/c/Users/th798/Miniconda3/Scripts/conda.exe' 'shell.bash' 'hook')"
 # <<< conda initialize <<<
 #+end_src
+
+*** Why does emacs think my home directory is in C:/users/yourUserId/AppData/Roaming on windows?
+
+That is the default on windows, so if you want emacs to think that your home is somewhere else, try setting Windows key -> Edit the system environment variables -> Environment variables... -> Add Home=C:/users/yourUserId under user environment variables.
