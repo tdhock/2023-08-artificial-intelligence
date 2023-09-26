@@ -73,13 +73,16 @@ key and type x) to see a list of packages you can install. Search for
 elpy and conda (maybe with C-s, meaning hold down control key and type
 s), mark for installation by typing i, then type x to install all
 packages marked for installation. Finally to tell emacs to use elpy
-with python code, and my conda environments, I put the following in my
+with python code, and my conda environments, and to start the shell in the same directory as the current python buffer,
+and to use "python" instead of "python3" I put the following in my
 ~/.emacs file:
 
 #+begin_src elisp
   (elpy-enable)
   (setq conda-anaconda-home (expand-file-name "~/miniconda3"))
   (setq conda-env-home-directory conda-anaconda-home)
+  (setq elpy-shell-starting-directory 'project-root)
+  (setq python-shell-interpreter "python");not "python3" !
 #+end_src
 
 Make sure to change the path above from "~/miniconda3" to 
