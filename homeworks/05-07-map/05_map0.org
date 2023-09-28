@@ -303,10 +303,15 @@ A PDF on bblearn with the following items in exactly this order:
   fields: label and value. For now the value is just the path cost
   (from start) to the node.
 - (b) Show your program loading in the 30-node sample file above, by
-  instantiating the Searcher class, =Searcher("map.txt")=.
-- (c) Show you program setting start node=U and end node=T. Accompany
-  your console action with a screenshot of your entire desktop with the
-  graphical map visible (using the [[file:DRDViz.py][DRDViz]] tool).
+  instantiating the Searcher class, =Searcher("map.txt")=. Upon
+  instantiation, it is recommended to analyze the map and determine,
+  for each city, its coordinates, and a list of connected cities. Also
+  it should set the myViz attribute to an instance of the DRDViz
+  class.
+- (c) Show your program setting start node=U and end node=T. Accompany
+  your console action with a screenshot of your entire desktop with
+  the graphical map visible. To make this work you have to call the
+  plot() and then save() methods of the [[file:DRDViz.py][DRDViz]] instance, see FAQ below.
 - (d) Ask your program to show your OPEN list to see that indeed node
   U is in it. Your node.showBasic() method should print (label, value)
   for that node.
@@ -317,7 +322,8 @@ A PDF on bblearn with the following items in exactly this order:
   your OPEN list. Show three inserts: at the front, and the end, and
   "in order", meaning a priority list based on the node value so that
   the cheapest node appears first in the new OPEN list. The insert
-  should show us the new OPEN list each time.
+  should show us the new OPEN list each time. Also make sure that
+  there is a reset() method that you can call to restart your search.
 - (g) Now let's make sure your INSERT handles duplicates properly:
   manually create new nodes for (K,500), (C,91) and (J,10). INSERT
   these into your OPEN list, showing the results.
@@ -333,4 +339,19 @@ Sample [[file:samplemap.txt][input file]], sample [[file:samplemap.out][console 
 - Where are the node.py and edge.py files we need to run DRDViz.py?
   They are in [[file:./][this directory]].
 - What value should showBasic print? f, g or h cost? Answer: for part
-  1 please print g (path cost).
+  1 please print h (heuristic cost).
+- How to get DRDViz working in emacs on windows? There is some issue
+  where python console stops responding after calling the plot method,
+  so to work-around that, please tell matplotlib to use the agg
+  backend, as in the code below, which should create a png file that
+  shows the current map:
+
+#+begin_src python
+  import matplotlib
+  matplotlib.use("agg")
+  from DRDViz import DRDViz
+  myViz=DRDViz()
+  myViz.loadGraphFromFile("samplemap.txt")
+  myViz.plot()
+  myViz.save("samplemap.png")
+#+end_src
