@@ -300,18 +300,20 @@ following rules in implementing your solution:
 
 A PDF on bblearn with the following items in exactly this order:
 - (a) Create a super-simple SearchNode class that has at least two
-  fields: label and value. For now the value is just the path cost
-  (from start) to the node.
+  fields/attributes: label and value. 
 - (b) Show your program loading in the 30-node sample file above, by
   instantiating the Searcher class, =Searcher("map.txt")=. Upon
   instantiation, it is recommended to analyze the map and determine,
   for each city, its coordinates, and a list of connected cities. Also
   it should set the myViz attribute to an instance of the DRDViz
   class.
-- (c) Show your program setting start node=U and end node=T. Accompany
-  your console action with a screenshot of your entire desktop with
-  the graphical map visible. To make this work you have to call the
-  plot() and then save() methods of the [[file:DRDViz.py][DRDViz]] instance, see FAQ below.
+- (c) Show your program setting start node=U and end node=T. After the
+  end node is known, your code should compute the distance from each
+  node on the map to the goal (to use as the heuristic function values
+  in informed search). Accompany your console action with a screenshot
+  of your entire desktop with the graphical map visible. To make this
+  work you have to call the plot() and then save() methods of the
+  [[file:DRDViz.py][DRDViz]] instance, see FAQ below.
 - (d) Ask your program to show your OPEN list to see that indeed node
   U is in it. Your node.showBasic() method should print (label, value)
   for that node.
@@ -334,7 +336,7 @@ Tests file with commands you should run: [[file:05_tests.py][05_tests.py]].
 
 Sample [[file:samplemap.txt][input file]], sample [[file:samplemap.out][console output]], [[file:samplemap.png][map image output]].
 
-** FAQ
+** COMMENT FAQ
 
 - Where are the node.py and edge.py files we need to run DRDViz.py?
   They are in [[file:./][this directory]].
@@ -353,5 +355,5 @@ Sample [[file:samplemap.txt][input file]], sample [[file:samplemap.out][console 
   myViz=DRDViz()
   myViz.loadGraphFromFile("samplemap.txt")
   myViz.plot()
-  myViz.save("samplemap.png")
+  myViz.save("samplemap_from_agg.png")
 #+end_src

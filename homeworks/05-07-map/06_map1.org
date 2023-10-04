@@ -8,135 +8,106 @@ output. Some expected output:
 #+begin_src python
 >>> x=Searcher("10test.txt", searchType="DEPTH", verbose=True)
 Loaded search type DEPTH with map in file: 10test.txt
-
 >>> x.setStartGoal('h','k')
-
 >>> x.search()
 Exploring node: H
 inserting new children: ['A', 'D', 'J']
-Open list: ['A;1;72; 0.00;72.00', 'D;1;135; 0.00;135.00', 'J;1;223; 0.00;223.00']
+Open list: ['A;1;72; 0.00; 0.00', 'D;1;135; 0.00; 0.00', 'J;1;223; 0.00; 0.00']
 Exploring node: A
 inserting new children: ['E', 'G']
-Open list: ['E;2;680; 0.00;680.00', 'G;2;199; 0.00;199.00', 'D;1;135; 0.00;135.00', 'J;1;223; 0.00;223.00']
+Open list: ['E;2;680; 0.00; 0.00', 'G;2;199; 0.00; 0.00', 'D;1;135; 0.00; 0.00', 'J;1;223; 0.00; 0.00']
 Exploring node: E
 inserting new children: ['C']
-Open list: ['C;3;973; 0.00;973.00', 'G;2;199; 0.00;199.00', 'D;1;135; 0.00;135.00', 'J;1;223; 0.00;223.00']
+Open list: ['C;3;973; 0.00; 0.00', 'G;2;199; 0.00; 0.00', 'D;1;135; 0.00; 0.00', 'J;1;223; 0.00; 0.00']
 Exploring node: C
 inserting new children: ['F', 'I', 'K', 'L']
-Open list: ['F;4;1251; 0.00;1251.00', 'I;4;1264; 0.00;1264.00', 'K;4;1243; 0.00;1243.00', 'L;4;1107; 0.00;1107.00', 'G;2;199; 0.00;199.00', 'D;1;135; 0.00;135.00', 'J;1;223; 0.00;223.00']
+Open list: ['F;4;1251; 0.00; 0.00', 'I;4;1264; 0.00; 0.00', 'K;4;1243; 0.00; 0.00', 'L;4;1107; 0.00; 0.00', 'G;2;199; 0.00; 0.00', 'D;1;135; 0.00; 0.00', 'J;1;223; 0.00; 0.00']
 Exploring node: F
 inserting new children: ['J', 'L']
-Open list: ['J;5;1378; 0.00;1378.00', 'L;5;1528; 0.00;1528.00', 'I;4;1264; 0.00;1264.00', 'K;4;1243; 0.00;1243.00', 'G;2;199; 0.00;199.00', 'D;1;135; 0.00;135.00']
+Open list: ['J;5;1378; 0.00; 0.00', 'L;5;1528; 0.00; 0.00', 'I;4;1264; 0.00; 0.00', 'K;4;1243; 0.00; 0.00', 'G;2;199; 0.00; 0.00', 'D;1;135; 0.00; 0.00']
 Exploring node: J
 inserting new children: ['L']
-Open list: ['L;6;1571; 0.00;1571.00', 'I;4;1264; 0.00;1264.00', 'K;4;1243; 0.00;1243.00', 'G;2;199; 0.00;199.00', 'D;1;135; 0.00;135.00']
+Open list: ['L;6;1571; 0.00; 0.00', 'I;4;1264; 0.00; 0.00', 'K;4;1243; 0.00; 0.00', 'G;2;199; 0.00; 0.00', 'D;1;135; 0.00; 0.00']
 Exploring node: L
 inserting new children: []
-Open list: ['I;4;1264; 0.00;1264.00', 'K;4;1243; 0.00;1243.00', 'G;2;199; 0.00;199.00', 'D;1;135; 0.00;135.00']
+Open list: ['I;4;1264; 0.00; 0.00', 'K;4;1243; 0.00; 0.00', 'G;2;199; 0.00; 0.00', 'D;1;135; 0.00; 0.00']
 Exploring node: I
 inserting new children: ['B', 'D']
-Open list: ['B;5;1773; 0.00;1773.00', 'D;5;1641; 0.00;1641.00', 'K;4;1243; 0.00;1243.00', 'G;2;199; 0.00;199.00']
+Open list: ['B;5;1773; 0.00; 0.00', 'D;5;1641; 0.00; 0.00', 'K;4;1243; 0.00; 0.00', 'G;2;199; 0.00; 0.00']
 Exploring node: B
 inserting new children: ['D', 'G']
-Open list: ['D;6;2048; 0.00;2048.00', 'G;6;2008; 0.00;2008.00', 'K;4;1243; 0.00;1243.00']
+Open list: ['D;6;2048; 0.00; 0.00', 'G;6;2008; 0.00; 0.00', 'K;4;1243; 0.00; 0.00']
 Exploring node: D
 inserting new children: []
-Open list: ['G;6;2008; 0.00;2008.00', 'K;4;1243; 0.00;1243.00']
+Open list: ['G;6;2008; 0.00; 0.00', 'K;4;1243; 0.00; 0.00']
 Exploring node: G
 inserting new children: []
-Open list: ['K;4;1243; 0.00;1243.00']
+Open list: ['K;4;1243; 0.00; 0.00']
 Exploring node: K
 Success! Reached goal node K with path: ['H', 'A', 'E', 'C', 'K']
-
+0
 >>> x=Searcher("10test.txt", searchType="BREADTH", verbose=True)
 Loaded search type BREADTH with map in file: 10test.txt
-
 >>> x.setStartGoal('h','k')
-
 >>> x.search()
 Exploring node: H
 inserting new children: ['A', 'D', 'J']
-Open list: ['A;1;72; 0.00;72.00', 'D;1;135; 0.00;135.00', 'J;1;223; 0.00;223.00']
+Open list: ['A;1;72; 0.00; 0.00', 'D;1;135; 0.00; 0.00', 'J;1;223; 0.00; 0.00']
 Exploring node: A
 inserting new children: ['E', 'G']
-Open list: ['D;1;135; 0.00;135.00', 'J;1;223; 0.00;223.00', 'E;2;680; 0.00;680.00', 'G;2;199; 0.00;199.00']
+Open list: ['D;1;135; 0.00; 0.00', 'J;1;223; 0.00; 0.00', 'E;2;680; 0.00; 0.00', 'G;2;199; 0.00; 0.00']
 Exploring node: D
 inserting new children: ['B', 'I']
-Open list: ['J;1;223; 0.00;223.00', 'E;2;680; 0.00;680.00', 'G;2;199; 0.00;199.00', 'B;2;410; 0.00;410.00', 'I;2;512; 0.00;512.00']
+Open list: ['J;1;223; 0.00; 0.00', 'E;2;680; 0.00; 0.00', 'G;2;199; 0.00; 0.00', 'B;2;410; 0.00; 0.00', 'I;2;512; 0.00; 0.00']
 Exploring node: J
 inserting new children: ['F', 'L']
-Open list: ['E;2;680; 0.00;680.00', 'G;2;199; 0.00;199.00', 'B;2;410; 0.00;410.00', 'I;2;512; 0.00;512.00', 'F;2;350; 0.00;350.00', 'L;2;416; 0.00;416.00']
+Open list: ['E;2;680; 0.00; 0.00', 'G;2;199; 0.00; 0.00', 'B;2;410; 0.00; 0.00', 'I;2;512; 0.00; 0.00', 'F;2;350; 0.00; 0.00', 'L;2;416; 0.00; 0.00']
 Exploring node: E
 inserting new children: ['C']
-Open list: ['G;2;199; 0.00;199.00', 'B;2;410; 0.00;410.00', 'I;2;512; 0.00;512.00', 'F;2;350; 0.00;350.00', 'L;2;416; 0.00;416.00', 'C;3;973; 0.00;973.00']
+Open list: ['G;2;199; 0.00; 0.00', 'B;2;410; 0.00; 0.00', 'I;2;512; 0.00; 0.00', 'F;2;350; 0.00; 0.00', 'L;2;416; 0.00; 0.00', 'C;3;973; 0.00; 0.00']
 Exploring node: G
 inserting new children: ['B']
-Open list: ['B;2;410; 0.00;410.00', 'I;2;512; 0.00;512.00', 'F;2;350; 0.00;350.00', 'L;2;416; 0.00;416.00', 'C;3;973; 0.00;973.00']
+Open list: ['B;2;410; 0.00; 0.00', 'I;2;512; 0.00; 0.00', 'F;2;350; 0.00; 0.00', 'L;2;416; 0.00; 0.00', 'C;3;973; 0.00; 0.00']
 Exploring node: B
 inserting new children: ['I']
-Open list: ['I;2;512; 0.00;512.00', 'F;2;350; 0.00;350.00', 'L;2;416; 0.00;416.00', 'C;3;973; 0.00;973.00']
+Open list: ['I;2;512; 0.00; 0.00', 'F;2;350; 0.00; 0.00', 'L;2;416; 0.00; 0.00', 'C;3;973; 0.00; 0.00']
 Exploring node: I
 inserting new children: ['C']
-Open list: ['F;2;350; 0.00;350.00', 'L;2;416; 0.00;416.00', 'C;3;973; 0.00;973.00']
+Open list: ['F;2;350; 0.00; 0.00', 'L;2;416; 0.00; 0.00', 'C;3;973; 0.00; 0.00']
 Exploring node: F
 inserting new children: ['C', 'L']
-Open list: ['L;2;416; 0.00;416.00', 'C;3;973; 0.00;973.00']
+Open list: ['L;2;416; 0.00; 0.00', 'C;3;973; 0.00; 0.00']
 Exploring node: L
 inserting new children: ['C']
-Open list: ['C;3;973; 0.00;973.00']
+Open list: ['C;3;973; 0.00; 0.00']
 Exploring node: C
 inserting new children: ['K']
-Open list: ['K;4;1243; 0.00;1243.00']
+Open list: ['K;4;1243; 0.00; 0.00']
 Exploring node: K
 Success! Reached goal node K with path: ['H', 'A', 'E', 'C', 'K']
-
+0
 >>> x=Searcher("10test.txt", searchType="BEST", verbose=True)
 Loaded search type BEST with map in file: 10test.txt
-
 >>> x.setStartGoal('h','k')
-
 >>> x.search()
 Exploring node: H
 inserting new children: ['A', 'D', 'J']
-Open list: ['A;1;72; 0.00;72.00', 'D;1;135; 0.00;135.00', 'J;1;223; 0.00;223.00']
-Exploring node: A
-inserting new children: ['E', 'G']
-Open list: ['D;1;135; 0.00;135.00', 'G;2;199; 0.00;199.00', 'J;1;223; 0.00;223.00', 'E;2;680; 0.00;680.00']
-Exploring node: D
-inserting new children: ['B', 'I']
-Open list: ['G;2;199; 0.00;199.00', 'J;1;223; 0.00;223.00', 'B;2;410; 0.00;410.00', 'I;2;512; 0.00;512.00', 'E;2;680; 0.00;680.00']
-Exploring node: G
-inserting new children: ['B']
-Open list: ['J;1;223; 0.00;223.00', 'B;2;410; 0.00;410.00', 'I;2;512; 0.00;512.00', 'E;2;680; 0.00;680.00']
+Open list: ['J;1;223;504.47;504.47', 'D;1;135;596.16;596.16', 'A;1;72;710.03;710.03']
 Exploring node: J
 inserting new children: ['F', 'L']
-Open list: ['F;2;350; 0.00;350.00', 'B;2;410; 0.00;410.00', 'L;2;416; 0.00;416.00', 'I;2;512; 0.00;512.00', 'E;2;680; 0.00;680.00']
-Exploring node: F
-inserting new children: ['C', 'L']
-Open list: ['B;2;410; 0.00;410.00', 'L;2;416; 0.00;416.00', 'I;2;512; 0.00;512.00', 'C;3;628; 0.00;628.00', 'E;2;680; 0.00;680.00']
-Exploring node: B
-inserting new children: ['I']
-Open list: ['L;2;416; 0.00;416.00', 'I;2;512; 0.00;512.00', 'C;3;628; 0.00;628.00', 'E;2;680; 0.00;680.00']
+Open list: ['L;2;416;349.17;349.17', 'F;2;350;495.23;495.23', 'D;1;135;596.16;596.16', 'A;1;72;710.03;710.03']
 Exploring node: L
-inserting new children: ['C']
-Open list: ['I;2;512; 0.00;512.00', 'C;3;550; 0.00;550.00', 'E;2;680; 0.00;680.00']
-Exploring node: I
-inserting new children: ['C']
-Open list: ['C;3;550; 0.00;550.00', 'E;2;680; 0.00;680.00']
+inserting new children: ['C', 'F']
+Open list: ['C;3;550;230.79;230.79', 'F;2;350;495.23;495.23', 'D;1;135;596.16;596.16', 'A;1;72;710.03;710.03']
 Exploring node: C
-inserting new children: ['E', 'K']
-Open list: ['E;2;680; 0.00;680.00', 'K;4;820; 0.00;820.00']
-Exploring node: E
-inserting new children: []
-Open list: ['K;4;820; 0.00;820.00']
+inserting new children: ['E', 'F', 'I', 'K']
+Open list: ['K;4;820; 0.00; 0.00', 'E;4;843;295.63;295.63', 'I;4;841;383.71;383.71', 'F;2;350;495.23;495.23', 'D;1;135;596.16;596.16', 'A;1;72;710.03;710.03']
 Exploring node: K
 Success! Reached goal node K with path: ['H', 'J', 'L', 'C', 'K']
-
+0
 >>> x=Searcher("10test.txt", searchType="A*", verbose=True)
 Loaded search type A* with map in file: 10test.txt
-
 >>> x.setStartGoal('h','k')
-
 >>> x.search()
 Exploring node: H
 inserting new children: ['A', 'D', 'J']
@@ -158,14 +129,7 @@ inserting new children: ['E', 'G']
 Open list: ['K;4;820; 0.00;820.00', 'F;2;350;495.23;845.23', 'I;2;512;383.71;895.71', 'G;2;199;766.99;965.99', 'E;2;680;295.63;975.63', 'B;2;410;838.02;1248.02']
 Exploring node: K
 Success! Reached goal node K with path: ['H', 'J', 'L', 'C', 'K']
-
->>> x=Searcher("50test.txt", searchType="DEPTH", verbose=False)
-Loaded search type DEPTH with map in file: 50test.txt
-
->>> x.setStartGoal('s','c')
-
->>> x.search()
-Success! Reached goal node C with path: ['S', 'AB', 'AF', 'V', 'AG', 'C']
+0
 #+end_src
 
 ** Extra credit
