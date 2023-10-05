@@ -3,7 +3,22 @@ Route-finding part 1
 Printout of your program output running the [[file:10test.txt][10test.txt]] and
 [[file:50test.txt]] maps using the four search types. Add your code to the
 top of [[file:06_tests.py][06_tests.py]], and submit a PDF with the code and
-output. Some expected output:
+output. Some things to remember:
+
+- If you are inserting a child node that already exists in OPEN list
+  (already another path to it found earlier) you only keep one
+  copy. For Best and A*, the algorithm is clear: you keep only the
+  "better" of the two. For breadth/depth first, we will do the
+  following for consistency: breadth-first, drop the new child (keep
+  the existing node); for depth-first, keep the new child, drop
+  existing.
+- In verbose mode, where you print your OPEN list, data for each
+  "node" shown in the list must show, *in the following order*,
+  (nodelabel, node depth from root, g(n), h(n), f(n)). The latter
+  float values should be formated to one or two decimals for
+  compactness. See my sample outputs linked in this spec.
+
+Some expected output:
 
 #+begin_src python
 >>> x=Searcher("10test.txt", searchType="DEPTH", verbose=True)
