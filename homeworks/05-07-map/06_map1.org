@@ -10,6 +10,11 @@ output. Some things to remember:
   (nodelabel, node depth from root, g(n), h(n), f(n)). The latter
   float values should be formated to one or two decimals for
   compactness. See my sample outputs linked in this spec.
+- *Avoiding Cycles:* you should implement some logic to avoid infinite
+  loop in depth first search. The logic I implemented to get the
+  output below is: when you expand a search node, add its label to an
+  alreadyExplored list. Make sure that the successor function does not
+  return any nodes that are alreadyExplored.
 - *Handling Duplicates:* The code below which produces the output
   below used insert_ methods which ensures there are no two search
   nodes with the same label, in the open/frontier list. So if you want
