@@ -7,16 +7,17 @@ output. Some things to remember:
 
 - In verbose mode, where you print your OPEN list, data for each
   "node" shown in the list must show, *in the following order*,
-  (nodelabel, node depth from root, g(n), h(n), f(n)). The latter
-  float values should be formated to one or two decimals for
-  compactness. See my sample outputs linked in this spec.
+  (nodelabel, node depth from root, g(n) -- path cost of node n, h(n)
+  heuristic/straight-line-distance to goal for node n, f(n) -- total
+  cost for A*). The latter float values should be formated to one or
+  two decimals for compactness. See my sample outputs below.
 - *Avoiding Cycles:* you should implement some logic to avoid infinite
   loop in depth first search. The logic I implemented to get the
   output below is: when you expand a search node, add its label to an
   alreadyExplored list. Make sure that the successor function does not
   return any nodes that are alreadyExplored.
-- *Handling Duplicates:* The code below which produces the output
-  below used insert_ methods which ensures there are no two search
+- *Handling Duplicates:* The code which produces the output
+  below used insert_ methods which ensure there are no two search
   nodes with the same label, in the open/frontier list. So if you want
   to get the exact same results as below (recommended but not required
   to get the search to work), you will have to implement that. If you
