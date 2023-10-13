@@ -1,14 +1,17 @@
 library(data.table)
 library(ggplot2)
-this.dir <- "~/teaching/cs470-570-spring-2023/homeworks/05-07-map/"
+this.dir <- "~/teaching/2023-08-artificial-intelligence/homeworks/05-07-map/"
 setwd(this.dir)
 (py.file.vec <- Sys.glob("07_judge/*.py"))
-get.out <- function(file.py, suffix="path", txt.file="50test.txt", search.type="BREADTH", start="K", goal="C"){
+txt.file="30node.txt"
+python=paste(
+  paste0("PYTHONPATH=", this.dir),
+  "/home/tdhock/.local/share/r-miniconda/envs/cs470s23/bin/python")
+get.out <- function(file.py, suffix="path", search.type="DEPTH", start="K", goal="C"){
   out.txt <- sub(".txt$", paste0("_", suffix, ".txt"), txt.file)
   unlink(out.txt)
   cmd <- paste(
-    paste0("PYTHONPATH=", this.dir),
-    "/home/tdhock/.local/share/r-miniconda/envs/cs470s23/bin/python", file.py, txt.file, search.type, start, goal)
+    python, file.py, txt.file, search.type, start, goal)
   system(cmd)
   tryCatch({
     readLines(out.txt)[1]
@@ -25,15 +28,20 @@ for(py.file in py.file.vec){
       raw.path <- get.out(py.file, "path")
     })
     path <- sub(",$", "", gsub(" ", "", raw.path))
+    cmd.out <- system(paste(python, "cost.py", txt.file, path), intern=TRUE)
+    cost <- as.integer(cmd.out)
+    if(length(cost)==0)cost <- NA
     result.dt.list[[paste(py.file, iteration)]] <- data.table(
       program=gsub("07_judge/|.py","",py.file), iteration,
       path,
+      cost,
       correct=identical(path, solution),
       seconds=timing[["elapsed"]])
   }
 }
-result.dt <- rbindlist(result.dt.list)
-result.dt[, .(program, path=substr(path, 1,10), correct)]
+(result.dt <- rbindlist(result.dt.list))
+result.dt[order(cost), .(program, cost, path=substr(path, 1,10), 
+plen=sapply(strsplit(result.dt$path,","),length), correct)]
 
 zero.err <- result.dt[correct==TRUE]
 zero.err[, median := median(seconds), by=program]
@@ -46,11 +54,9 @@ ggplot()+
     data=zero.err)+
   scale_x_log10()
     
-## DEPTH: vertin, Persley, Siegel, Valdivia
+## 1st Bruce Angus
+## 2nd Milizia Nathan
+## 3rd Karlsson Kirk Perez Salazar Bauck
+## Participation chase mcauslin smith
 
-## BEST: Persley, Valdivia
 
-## BREADTH: vertin, Persley, Valdivia
-
-## Vertin 30 EC 1st place, Persley 20 EC 2nd place, Valdivia/Siegel 10
-## EC 3rd place. Participation: 5EC for Carlile, Watlington.
