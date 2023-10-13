@@ -4,8 +4,7 @@ recommended to install/use [[https://docs.conda.io/projects/conda/en/latest/user
 - emacs is the required IDE for the class. It allows you to write/edit
   code without using the mouse, and has great python support,
   including conda environments, interactive execution, completion, ...
-  - [[https://www.youtube.com/playlist?list=PLwc48KSH3D1OeAHFQhWpd8Fz8rLhTaD7t][My emacs and python screencasts show you how to install emacs and
-    configure it to work with python]].
+  - [[https://www.youtube.com/playlist?list=PLwc48KSH3D1OeAHFQhWpd8Fz8rLhTaD7t][My emacs and python screencasts show you how to install emacs and configure it to work with python]].
   - [[https://www.gnu.org/software/emacs/download.html][Download and Install GNU Emacs]].
   - [[https://elpy.readthedocs.io/en/latest/introduction.html#installation][Installation instructions for Elpy, which is a python IDE for emacs]].
   - [[https://www.emacswiki.org/emacs/PythonProgrammingInEmacs][PythonProgrammingInEmacs on the emacswiki has instructions for
@@ -82,7 +81,7 @@ and to use "python" instead of "python3" I put the following in my
   (setq conda-anaconda-home (expand-file-name "~/miniconda3"))
   (setq conda-env-home-directory conda-anaconda-home)
   (setq elpy-shell-starting-directory 'current-directory)
-  (setq python-shell-interpreter "python");not "python3" !
+  (setq python-shell-interpreter "python");not "python3" which is the default in emacs 28+
 #+end_src
 
 Make sure to change the path above from "~/miniconda3" to 

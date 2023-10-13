@@ -81,10 +81,16 @@ execution)
   - [[file:slides/chapter3.2.pptx][Chapter 3.2 informed search slides]].
 - Oct 2: [[file:homeworks/05-07-map/06_map1.org][Homework week 6: Route-finding part 1]].
 - Oct 9: [[file:homeworks/05-07-map/07_map2.org][Homework week 7: Route-finding part 2]].
-- Oct 16: week 8, no homework, [[file:exams.org][Mid-term review]] and exam. (professor absent)
-  - Mon: review session: present your practice mid-term
-    solutions in class for extra credit on the actual mid-term exam.
-  - Weds: mid-term exam.
+- Oct 16: week 8, no homework.
+  - no class Mon Oct 16.
+  - Mid-term review Weds 18 Oct. The exam will consist of a
+    route-finding problem that you will have to work through by
+    hand. You will be given a picture similar to the slide which shows
+    the map of Romania, and you will have to work through the
+    iterations of the tree search algorithms, step by step. You may
+    want to review [[file:homeworks/05-07-map/06_map1.org][the sample output from week 6]], to make sure you
+    understand why the algorithm does what it does at each iteration.
+  - exam Fri 20 Oct in class.
 - Oct 23: Homework week 9: [[https://github.com/tdhock/cs470-570-spring-2023/blob/master/homeworks/09-11-halma/README.org#part-0-deliverable-gui-and-moves-for-one-player][Halma part 0]].
   - Mon: route-finding extra credit tournament. fastest
     program that gets the right answer wins! Bring your program on a
@@ -106,8 +112,9 @@ execution)
 - Dec 4: reading week, [[file:exams.org][exam review (questions 4-10)]] TODO DATE,
   present your solution for 10 extra credit points toward your exam
   score.
-- Finals week, exam TODO DATE.
-
+- Finals week.
+  - [[file:exams.org][review]].
+  - exam TODO DATE.
 Homeworks will be graded using this [[https://docs.google.com/document/d/1-owd3uMexZKzdOib9R_CQrwke-BYkIq2-m6Sd1sFNVY/edit#heading=h.pekgvy78tviz][General Usage Rubric]]. 
 
 ** Video Resources
