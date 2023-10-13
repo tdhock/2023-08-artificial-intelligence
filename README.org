@@ -81,6 +81,10 @@ execution)
   - [[file:slides/chapter3.2.pptx][Chapter 3.2 informed search slides]].
 - Oct 2: [[file:homeworks/05-07-map/06_map1.org][Homework week 6: Route-finding part 1]].
 - Oct 9: [[file:homeworks/05-07-map/07_map2.org][Homework week 7: Route-finding part 2]].
+  - EXTRA CREDIT 13 Oct 2023: bring your search program to class to
+    compete, fastest program that gets the right answer wins! Make
+    sure your program can be called on the command line via for
+    example: python your_solution.py inFile.txt BEST U T
 - Oct 16: week 8, no homework.
   - no class Mon Oct 16.
   - Mid-term review Weds 18 Oct. The exam will consist of a

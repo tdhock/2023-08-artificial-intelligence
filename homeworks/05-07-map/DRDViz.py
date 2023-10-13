@@ -96,11 +96,11 @@ class DRDViz:
         plt.plot([x.x for x in self.nodes], [x.y for x in self.nodes], 'ko',
                  color="#BBBCBD")  # plot vertices circles first
         for node in self.nodes:  # now plot the labels
-            plt.text(node.x, node.y, node.label, color='b', weight='normal')
+            plt.text(node.x, node.y, node.label, color='b', weight='normal', size="large")
         # Now plot in the edges
         for edge in self.edges:
             plt.plot([edge.x1, edge.x2], [edge.y1, edge.y2], 'b-', color='k', linewidth=0.5)  # make the lines
-            plt.text(edge.midx, edge.midy, edge.label, size='x-small')  # label the edge at its midpoint
+            plt.text(edge.midx, edge.midy, edge.label, size='small')  # label the edge at its midpoint
         self.paintGraph()
 
 
