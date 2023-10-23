@@ -96,9 +96,17 @@ execution)
     understand why the algorithm does what it does at each iteration.
   - exam Fri 20 Oct in class.
 - Oct 23: Homework week 9: [[https://github.com/tdhock/cs470-570-spring-2023/blob/master/homeworks/09-11-halma/README.org#part-0-deliverable-gui-and-moves-for-one-player][Halma part 0]].
-  - Mon: route-finding extra credit tournament. fastest
-    program that gets the right answer wins! Bring your program on a
-    laptop /usb drive or put it in [[https://drive.google.com/drive/folders/1N6fSB7jQuJBkG1x3V-wvrRyNMG5IHICQ?usp=sharing][this google drive folder]].
+  - thinking about study habits
+  - 1. What grade do I want in this class? Am I on track to earning
+    that grade?
+  - 2. at least one example of a good study habit that I have been
+    practicing during the first half of the semester, which is helping
+    me earn the grade I want, and which I would like to continue.
+  - 3. at least one example of a change in study habits that I could
+    do in the second half of the semester, in order to earn the grade
+    I want. asking questions in class, asking questions with
+    classmates, asking questions during office hours, organizing group
+    study sessions, ...
 - Oct 30: Homework week 10: [[file:homeworks/09-11-halma/README.org][Halma part 1]].
   - [[file:slides/chapter5.pptx][Slides ch5]].
 - Nov 6: Homework week 11: [[file:homeworks/09-11-halma/README.org][Halma part 2]]. Veterans day holiday Nov 10.
