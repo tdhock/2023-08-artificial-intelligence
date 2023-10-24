@@ -85,7 +85,7 @@ execution)
   - Mon: review session: present your practice mid-term
     solutions in class for extra credit on the actual mid-term exam.
   - Weds: mid-term exam.
-- Oct 23: Homework week 9: [[https://github.com/tdhock/cs470-570-spring-2023/blob/master/homeworks/09-11-halma/README.org#part-0-deliverable-gui-and-moves-for-one-player][Halma part 0]].
+- Oct 23: Homework week 9: [[file:homeworks/09-11-halma/README.org#part-0-deliverable-gui-and-moves-for-one-player][Halma part 0]].
   - Mon: route-finding extra credit tournament. fastest
     program that gets the right answer wins! Bring your program on a
     laptop /usb drive or put it in [[https://drive.google.com/drive/folders/1N6fSB7jQuJBkG1x3V-wvrRyNMG5IHICQ?usp=sharing][this google drive folder]].
