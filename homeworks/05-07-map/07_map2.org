@@ -1,5 +1,27 @@
 Route-finding part 2
 
+In the search method, save the solution path to a text file:
+- for input file called 10test.txt, solution file should be called
+  10test_path.txt,
+- for input file called x.txt, solution file should be called
+  x_path.txt
+- format of solution path output file should be plain text with one
+  line, and a comma separating each city. For example if start is A
+  and end is E: A,B,C,D,E
+- Use the following code at the bottom of your python script, to get
+  input arguments from a command line such as: python your_solution.py
+  inFile.txt BEST U T
+
+#+begin_src python
+if __name__ == "__main__":
+    prog, inFile, searchType, start, goal = sys.argv
+    s=Searcher(inFile, searchType=searchType)
+    s.setStartGoal(start, goal)
+    s.search()
+#+end_src
+
+
+
 After having coded the solution last week, now is the time to think
 about it, and analyze it.
 
