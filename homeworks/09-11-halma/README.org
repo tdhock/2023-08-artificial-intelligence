@@ -343,10 +343,11 @@ goes in the PDF are requirements)
   Tkinter.Canvas. Use N=8 for screenshots in part 0.
 - Screenshot of initial board: white or black circles in one corner,
   representing the pieces for one player. (use [[https://tkinter-docs.readthedocs.io/en/latest/widgets/canvas.html#Canvas.create_oval][canvas.create_oval]])
-- Screenshots of possible moves after clicking on a piece. Clicking on
-  a circle should hilight that piece, and make squares appear,
-  representing where moves are possible for that piece. (use
-  canvas.create_rectangle)
+- Screenshots of possible moves after clicking on a piece. Use
+  [[https://tkdocs.com/tutorial/canvas.html][canvas_object.tag_bind]] to attach functions to mouse click
+  events. Clicking on a circle should hilight that piece, and make
+  squares appear, representing where moves are possible for that
+  piece. (use canvas.create_rectangle)
 - Screenshots after having moved some pieces. Clicking on a square
   should move the hilighted piece (delete the old oval, and draw a new
   one). You can erase/remove circles and squares via
