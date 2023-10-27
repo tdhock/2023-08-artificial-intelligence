@@ -387,9 +387,7 @@ screenshots that very clearly demonstrate each of the above.
 Now it is time to code a two player game, but please make sure there
 is no repeated logic between the two players. In particular, the code
 below should be the only thing required to define the differences
-between player 1 and 2. Your code should derive all other attributes
-of the players from these data (white goes first, starting at corner
-0; black goes second, starting at corner N-1).
+between player 1 and 2. 
 
 #+begin_src python
   PLAYERS = [
@@ -397,6 +395,13 @@ of the players from these data (white goes first, starting at corner
       ("black", N-1)
       ]
 #+end_src
+
+Your code should derive all other attributes
+of the players from these data (white goes first, starting at corner
+0; black goes second, starting at corner N-1). Use for loops over the
+two players, and make sure to avoid code like if player is "white"
+etc. (the rules are the same for both players, so no need for if/else
+logic for players)
 
 - Functionality checklist. This documents precisely the functionality
   that you completed for this phase. Hopefully, this is just a series
@@ -419,7 +424,7 @@ of the players from these data (white goes first, starting at corner
 
 Suggestions/hints: my solution has two classes, with the following methods:
 - Position: create_oval, update_distance_to_goal, create_shape,
-  delete_shape, click_oval, click_rectangle, move_positions, jump,
+  delete_shape, click_oval, click_rectangle, get_possible,
   adjacent_positions, get_position_for_xy_offset.
 - Board: next_turn, hilite_turn, delete_moves. With useful data
   attributes for keeping track of which positions have pieces/moves
