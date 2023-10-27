@@ -346,18 +346,18 @@ both players if you want but that is only required next week).
   Tkinter.Canvas. Use N=8 for screenshots in part 0.
 - Screenshot of initial board: white or black circles in one corner,
   representing the pieces for one player. (use [[https://tkinter-docs.readthedocs.io/en/latest/widgets/canvas.html#Canvas.create_oval][canvas.create_oval]])
-- Screenshots of possible moves after clicking on a piece. Clicking on
-  a circle should hilight that piece, and make squares appear,
-  representing where moves are possible for that piece. (use
-  canvas.create_rectangle)
-- Start by implementing moves to adjacent squares. Take a screenshot
-  after having moved some pieces. Clicking on a square should move the
-  hilighted piece (delete the old oval, and draw a new one). You can
-  erase/remove circles and squares via canvas.delete(id).
-- After moves to adjacent squares are working, implement the
-  jumping. Take a screenshot of moves available from several
-  consecutive jumps, implemented via recursion. Logic should be as
-  follows:
+- Screenshot of possible moves after clicking on a piece. Make sure to
+  show moves available from several consecutive jumps. Use
+  [[https://tkdocs.com/tutorial/canvas.html][canvas_object.tag_bind]] to attach functions to mouse click
+  events. Clicking on a circle should hilight that piece, and make
+  squares appear, representing where moves are possible for that
+  piece. (use canvas.create_rectangle)
+- Screenshot after having moved some pieces. Clicking on a
+  square should move the hilighted piece (delete the old oval, and
+  draw a new one). You can erase/remove circles and squares via
+  canvas.delete(id).
+- To compute possible moves (including recursive jumping), suggested
+  logic is:
   - initialize an empty list that will contain possible moves.
   - call get_possible(square, iteration=1)
   - For each of the 8 possible directions:
@@ -366,9 +366,10 @@ both players if you want but that is only required next week).
     - If there is no piece in adjacent square,
       - if it is the first iteration of recursion, then add the
         adjacent square to list of possible.
-    - Otherwise, there is a piece in adjacent square. If there is no
-      piece in the square one after the adjacent, and that square is
-      not already in list of possible, then
+    - Otherwise, there is a piece in adjacent square, so we can
+      consider the possibility of a jump. If there is no piece in the
+      square one after the adjacent, and that square is not already in
+      list of possible, then
       - add that square to list of possible.
       - call get_possible(square after adjacent, iteration+1)
 - Extra Credit: arrange the pieces as shown in the figure below, and
