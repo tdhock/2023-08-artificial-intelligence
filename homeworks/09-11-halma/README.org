@@ -337,8 +337,9 @@ goes in the PDF are requirements)
 
 *** Part 0 Deliverable: GUI and moves for one player
 
-- Overview. A brief description of how you chose to architect your
-  code: overview of the key objects/classes and their key methods.
+- Overview. A brief description (small paragraph) of how you chose to
+  architect your code: overview of the key objects/classes and their
+  key methods.
 - Display NxN grid, [[https://tkdocs.com/tutorial/grid.html][using the grid manager]]. Each cell can be a
   Tkinter.Canvas. Use N=8 for screenshots in part 0.
 - Screenshot of initial board: white or black circles in one corner,
