@@ -337,6 +337,9 @@ goes in the PDF are requirements)
 
 *** Part 0 Deliverable: GUI and moves for one player
 
+This week you only have to code one player and movement (you can code
+both players if you want but that is only required next week).
+
 - Overview. A brief description (small paragraph) of how you chose to
   architect your code: overview of the key objects/classes and their
   key methods.
@@ -344,18 +347,32 @@ goes in the PDF are requirements)
   Tkinter.Canvas. Use N=8 for screenshots in part 0.
 - Screenshot of initial board: white or black circles in one corner,
   representing the pieces for one player. (use [[https://tkinter-docs.readthedocs.io/en/latest/widgets/canvas.html#Canvas.create_oval][canvas.create_oval]])
-- Screenshots of possible moves after clicking on a piece. Use
+- Screenshot of possible moves after clicking on a piece. Make sure to
+  show moves available from several consecutive jumps. Use
   [[https://tkdocs.com/tutorial/canvas.html][canvas_object.tag_bind]] to attach functions to mouse click
   events. Clicking on a circle should hilight that piece, and make
   squares appear, representing where moves are possible for that
   piece. (use canvas.create_rectangle)
-- Screenshots after having moved some pieces. Clicking on a square
-  should move the hilighted piece (delete the old oval, and draw a new
-  one). You can erase/remove circles and squares via
+- Screenshot after having moved some pieces. Clicking on a
+  square should move the hilighted piece (delete the old oval, and
+  draw a new one). You can erase/remove circles and squares via
   canvas.delete(id).
-- Screenshot of moves available from several consecutive jumps. Start
-  by implementing moves to adjacent squares. After that is working,
-  implement the jumping.
+- To compute possible moves (including recursive jumping), suggested
+  logic is:
+  - initialize an empty list that will contain possible moves.
+  - call get_possible(square, iteration=1)
+  - For each of the 8 possible directions:
+    - Compute adjacent square in that direction, and the square which
+      is one after the adjacent (twice as far in that direction).
+    - If there is no piece in adjacent square,
+      - if it is the first iteration of recursion, then add the
+        adjacent square to list of possible.
+    - Otherwise, there is a piece in adjacent square, so we can
+      consider the possibility of a jump. If there is no piece in the
+      square one after the adjacent, and that square is not already in
+      list of possible, then
+      - add that square to list of possible.
+      - call get_possible(square after adjacent, iteration+1)
 - Extra Credit: arrange the pieces as shown in the figure below, and
   then click on the right piece, and take a screenshot of the possible
   moves, that shows that your program agrees with that figure (from
@@ -367,6 +384,25 @@ Please submit a PDF with your code, along with labeled and annotated
 screenshots that very clearly demonstrate each of the above.
 
 *** Part 1 Deliverable: game for two humans
+
+Now it is time to code a two player game, but please make sure there
+is no repeated logic between the two players. In particular, the code
+below should be the only thing required to define the differences
+between player 1 and 2. 
+
+#+begin_src python
+  PLAYERS = [
+      ("white", 0),
+      ("black", N-1)
+      ]
+#+end_src
+
+Your code should derive all other attributes
+of the players from these data (white goes first, starting at corner
+0; black goes second, starting at corner N-1). Use for loops over the
+two players, and make sure to avoid code like if player is "white"
+etc. (the rules are the same for both players, so no need for if/else
+logic for players)
 
 - Functionality checklist. This documents precisely the functionality
   that you completed for this phase. Hopefully, this is just a series
@@ -389,7 +425,7 @@ screenshots that very clearly demonstrate each of the above.
 
 Suggestions/hints: my solution has two classes, with the following methods:
 - Position: create_oval, update_distance_to_goal, create_shape,
-  delete_shape, click_oval, click_rectangle, move_positions, jump,
+  delete_shape, click_oval, click_rectangle, get_possible,
   adjacent_positions, get_position_for_xy_offset.
 - Board: next_turn, hilite_turn, delete_moves. With useful data
   attributes for keeping track of which positions have pieces/moves
