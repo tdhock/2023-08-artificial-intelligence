@@ -129,7 +129,7 @@ execution)
   score.
 - Finals week.
   - [[file:exams.org][review]].
-  - exam TODO DATE.
+  - exam Weds Dec 13, 8-9:30.
 Homeworks will be graded using this [[https://docs.google.com/document/d/1-owd3uMexZKzdOib9R_CQrwke-BYkIq2-m6Sd1sFNVY/edit#heading=h.pekgvy78tviz][General Usage Rubric]]. 
 
 ** Video Resources
