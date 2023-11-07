@@ -434,6 +434,37 @@ Suggestions/hints: my solution has two classes, with the following methods:
 
 *** Part 2 deliverable: game for human and AI
 
+Note: there should not be any code specific to white/black or human/AI
+player, other than this configuration data at the top of your python
+script:
+
+#+begin_src python
+  PLAYERS = [
+      ("white", 0, None),
+      ("black", BOARD_SIZE-1, AI)
+  ]
+#+end_src
+
+The code above indicates that the white player is human, and the black
+player is AI. In my code, AI is a class which implements the logic
+about how to make a move using minimax search and alpha-beta pruning.
+- The __init__ method should take as input a board object to analyze,
+  and it should call =min_or_max(board, 0, -1, -math.inf, math.inf)=
+- =min_or_max(board, depth, sign, this_bound, other_bound)= should be
+  the implementation of minimax search and alpha/beta pruning.
+  - board is the Board object to analyze.
+  - depth is current depth of search, starts at 0, and increases by
+    one for each recursive call.
+  - sign indicates whether or minimize or maximize. Note that there
+    should not be any code like if sign==1 do some code to minimize,
+    else do some other code to maximize. You should only need to
+    multiply sign by utility/score to perform min/max, for example =sign*ch.utility < sign*best.utility=
+  - this_bound and other_bound are alpha/beta values from pruning
+    (note that during the recursive call they should be switched,
+    along with the sign).
+- it should recursively call itself to continue minimax search one level deeper:
+  =min_or_max(child, depth+1, -sign, other_bound, this_bound)=
+
 - Overview: Similar to part1, but now extended to focus on the
   creation of your intelligent Halma agent. Condense your description
   of the basics from Part1 (labeling them as "Part1" pieces), but

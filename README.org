@@ -109,9 +109,12 @@ execution)
     study sessions, ...
 - Oct 30: Homework week 10: [[file:homeworks/09-11-halma/README.org][Halma part 1]].
   - [[file:slides/chapter5.pptx][Slides ch5]].
-- Nov 6: Homework week 11: [[file:homeworks/09-11-halma/README.org][Halma part 2]]. Veterans day holiday Nov 10.
+- Nov 6: Homework week 11: [[file:homeworks/09-11-halma/README.org][Halma part 2]]. 
+  - Veterans day holiday Nov 10.
+  - Only office hours this week Tues 3-4.
 - Nov 13: Homework week 12: [[file:homeworks/12-14-image-classification/12_installation.org][Image classification part 0]]: installation
   and visualizing images.
+  - Monday Nov 13: Halma competition!
   - [[file:installation.org][installation instructions]].
   - [[https://raw.githubusercontent.com/tdhock/cs499-599-fall-2022/main/slides/01-intro-slides/slides.pdf][intro to machine learning slides]].
   - [[file:slides/week13-linear-models.pdf][slides about learning a linear model using torch]].
