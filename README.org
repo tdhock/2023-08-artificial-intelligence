@@ -120,7 +120,7 @@ execution)
   - [[file:slides/week13-linear-models.pdf][slides about learning a linear model using torch]].
   - Mon: extra credit Halma tournament! Bring a laptop with
     your code to class to compete for extra credit points.
-- Nov 20: [[file:homeworks/12-14-image-classification/13_torch.org][Homework week 13]]: Image classification part 1. Thanksgiving
+- Nov 20: [[file:homeworks/12-14-image-classification/13_kfold_cv_linear_model.org][Homework week 13]]: Image classification part 1. Thanksgiving
   holiday Nov 23-24.
 - Nov 27: [[file:homeworks/12-14-image-classification/14_torch.org][Homework week 14]]: Image classification part 2.
   - [[https://raw.githubusercontent.com/tdhock/2023-res-baz-az/main/HOCKING-slides-short.pdf][slides with test accuracy figures]].

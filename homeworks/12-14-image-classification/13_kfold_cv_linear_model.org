@@ -1,0 +1,109 @@
+K-fold cross-validation for model comparison
+
+In this project your goal is to implement a linear model for binary
+classification, and use K-Fold cross-validation to show that its
+prediction accuracy is greater than a featureless baseline prediction.
+
+For this project you need to use scikit-learn.
+- sklearn.model_selection.KFold can be used to split the full data set
+  into train/test sets.
+
+*** Experiments/application
+- Use zip.train data set from
+  [[https://web.stanford.edu/~hastie/ElemStatLearn/data.html]],
+  [[file:../data/][local copy here]] After using pandas.read_csv,
+  remove any rows which have non-01 labels (so we can do binary
+  classification).
+- use a for loop over sklearn.model_selection.KFold to iterate over
+  K=3 train/test sets.
+- Use sklearn.linear_model.LogisticRegressionCV(cv=5) to implement a
+  linear model which uses 5-fold cross-validation to choose the
+  regularization/alpha hyper-parameter.
+  - use learner.fit(train_inputs, train_outputs) to train the linear model.
+  - use learner.predict(test_inputs) to compute predictions on test data.
+- Also write code that computes what is the more frequent class label
+  (0 or 1) in the train set. Hint: use [[https://pandas.pydata.org/docs/reference/api/pandas.Series.value_counts.html][value_counts]] and [[https://pandas.pydata.org/docs/reference/api/pandas.Series.idxmax.html][idxmax]]
+  methods. This is the featureless baseline, which should be run to
+  deterimine if you are able to learn any non-trivial relationship at
+  all between inputs/outputs (if you are able to, then your learner
+  should be more accurate than the featureless baseline).
+- Now compute predictions on the test set, and store them in a
+  dictionary called pred_dict with at least two keys (see extra credit
+  for more ideas): linear_model, featureless. Values
+  should each be 1d numpy arrays (vector of predicted class
+  labels). Featureless should be a vector
+  of either all 0 or all 1 (whichever was more frequent in the train
+  set labels), for comparison with a simple baseline (any properly
+  trained machine learning model should be at least as accurate as the
+  featureless baseline).
+- Write a for loop over pred_dict entries, and in each iteration
+  compute the test accuracy (percent correctly predicted labels in
+  test set).
+- Jump out of all of those for loops, then use
+  pd.concat(list_of_data_frames) to combine test accuracy values into
+  a single DataFrame with columns data_set, fold_id, algorithm,
+  test_accuracy_percent. Print out that table and show it in your
+  PDF report.
+- Also make a ggplot to visually examine which learning algorithm is
+  best for each data set. Use geom_point with
+  x="test_accuracy_percent", y="algorithm", and facet_grid(". ~ data_set").
+  Which algorithm is most accurate for zip data? For spam data?
+  
+Extra credit:
+- Use both spam and zip.train data sets from
+  [[https://web.stanford.edu/~hastie/ElemStatLearn/data.html]],
+  [[file:../data/][local copy here]] After using pandas.read_csv,
+  remove any rows which have non-01 labels (so we can do binary
+  classification in both data sets). Then convert inputs to a numpy
+  matrix and convert outputs to a label vector. Store the two data
+  sets in a dictionary called data_dict with two keys, data set names:
+  spam and zip. Each value in that dict should store the data set, for
+  example as a tuple (inputs,outputs). Use a for loop to do the
+  analysis on both data sets, and create a multi-panel figure
+  to show test accuracy values, one panel per data set, facet_grid(". ~ data_set")
+- Create another learner that scales the inputs before learning the
+  linear model, as described on the scikit-learn [[https://scikit-learn.org/stable/modules/preprocessing.html][pre-processing]]
+  tutorial page. Include this learner on the test accuracy figure,
+  along with the learner which does not use scaling. You may need to
+  increase the max_iter parameter from its default of 100, for
+  example,
+
+#+BEGIN_SRC 
+pipe = make_pipeline(StandardScaler(), LogisticRegressionCV(cv=5, max_iter=1000))
+#+END_SRC
+
+- GridSearchCV has a cv_results_ attribute which is a dictionary which
+  stores the mean accuracy over splits, for each hyper-parameter
+  (n_neighbors, alpha, etc). Make a plot that shows the validation
+  accuracy as a function of a hyper-parameter for one or more
+  algorithms and/or data sets.
+- if you compute and plot ROC curves for each (test fold, algorithm)
+  combination. Make sure each algorithm is drawn in a different color,
+  and there is a legend that the reader can use to read the figure.
+- Use GridSearchCV(cv=5) with KNeighborsClassifier to implement
+  internal subtrain/validation splits that automatically chooses the
+  best value for n_neighbors (from 1 to 20), using 5-fold
+  cross-validation. After calling the fit method, the best_params_
+  attribute stores which hyper-parameter was selected as best, so
+  print out that value. Is it always the same for each data set and
+  split, or does it vary?
+- try two different versions of nearest neighbors, with and without
+  StandardScaler(), and save/print/plot test accuracy values for both
+  versions.
+- if you compute area under the ROC curve (AUC) and include
+  that as another evaluation metric (in a separate panel/plot) to
+  compare the test accuracy of the algorithms.
+- If you do an analysis of how many train data you need to get optimal
+  prediction accuracy. Use a for loop over train data sizes, 10, 50,
+  100, etc. Plot y=test accuracy as a function of x=train data size.
+  
+** FAQ
+
+- How to fix KeyError: something is not in index?  "not in index"
+  indicates you are not using the indexing correctly. Please refer to
+  the [[https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html][pandas]]/[[https://numpy.org/doc/stable/user/basics.indexing.html#basics-indexing][numpy]] documentation for correct usage examples. You may
+  need to use DF.loc[rows,cols] or DF.iloc[rows,cols]. Also KFold
+  examples may be useful,
+  https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html
+- What is the difference betwen loc and iloc? loc uses the index
+  (row/column names) whereas iloc uses integer row/column numbers.
