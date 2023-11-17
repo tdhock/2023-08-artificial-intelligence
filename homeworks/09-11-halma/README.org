@@ -517,8 +517,7 @@ professor, but the basic outline goes like this:
   program with smart computer player. Detailed points depend on level
   of smartness, as described in write-up and demonstrated in
   tournament.
-- Extra credit points will be given as premiums in the tournament.
-
+- Extra credit points will be given as premiums in the tournament: Nathan(2nd), Jacob(1st).
 
 *** Other implementations (do not copy/use code from them, that would be plagiarism)
 

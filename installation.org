@@ -38,6 +38,7 @@ via:
   conda create -n 2023-08-artificial-intelligence
   conda activate 2023-08-artificial-intelligence
   conda install python=3.11.4
+  conda install plotnine
 #+end_src
 
 That should create and activate a new conda environment with the
