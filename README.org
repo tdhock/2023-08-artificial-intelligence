@@ -119,7 +119,7 @@ execution)
   - [[https://raw.githubusercontent.com/tdhock/cs499-599-fall-2022/main/slides/01-intro-slides/slides.pdf][intro to machine learning slides]].
   - Mon: extra credit Halma tournament! Bring a laptop with
     your code to class to compete for extra credit points.
-- Nov 20: [[file:homeworks/12-14-image-classification/13_torch.org][Homework week 13]]: Image classification part 1. Thanksgiving
+- Nov 20: [[file:homeworks/12-14-image-classification/13_kfold_cv_linear_model.org][Homework week 13]]: Image classification part 1. Thanksgiving
   holiday Nov 23-24.
   - TODO slides about learning a linear model using scikit-learn.
   - [[https://raw.githubusercontent.com/tdhock/2023-res-baz-az/main/HOCKING-slides-short.pdf][slides with test accuracy figures]].
@@ -129,7 +129,7 @@ execution)
   score.
 - Finals week.
   - [[file:exams.org][review]].
-  - exam TODO DATE.
+  - exam Weds Dec 13, 8-9:30.
 Homeworks will be graded using this [[https://docs.google.com/document/d/1-owd3uMexZKzdOib9R_CQrwke-BYkIq2-m6Sd1sFNVY/edit#heading=h.pekgvy78tviz][General Usage Rubric]]. 
 
 ** Video Resources

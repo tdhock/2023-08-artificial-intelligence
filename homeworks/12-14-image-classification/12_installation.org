@@ -7,7 +7,7 @@ python, including
 - printing a summary of the number of rows/columns in a DataFrame.
 - basic data visualization using plotnine.
 
-Make sure to read the [[file:../../installation.org][installation instructions]].
+Make sure to do =conda install -c conda-forge plotnine= to get the software we use this week.
 
 ** Image classification homework Part 0: visualizing image data
 
