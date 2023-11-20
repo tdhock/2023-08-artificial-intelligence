@@ -47,7 +47,11 @@ For this project you need to use scikit-learn.
 - Also make a ggplot to visually examine which learning algorithm is
   best for each data set. Use geom_point with
   x="test_accuracy_percent", y="algorithm", and facet_grid(". ~ data_set").
-  Which algorithm is most accurate for zip data? For spam data?
+  Which algorithm is most accurate for zip data?
+
+The correct answer should look something like the figure below:
+
+[[file:figure-example-test-accuracy.png]]
   
 Extra credit:
 - Use both spam and zip.train data sets from

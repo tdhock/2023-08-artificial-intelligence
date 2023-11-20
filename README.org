@@ -121,9 +121,9 @@ execution)
     your code to class to compete for extra credit points.
 - Nov 20: [[file:homeworks/12-14-image-classification/13_kfold_cv_linear_model.org][Homework week 13]]: Image classification part 1. Thanksgiving
   holiday Nov 23-24.
-  - TODO slides about learning a linear model using scikit-learn.
-  - [[https://raw.githubusercontent.com/tdhock/2023-res-baz-az/main/HOCKING-slides-short.pdf][slides with test accuracy figures]].
+  - Cross-validation slides.
 - Nov 27: [[file:homeworks/12-14-image-classification/14_torch.org][Homework week 14]]: Image classification part 2.
+  - [[https://raw.githubusercontent.com/tdhock/2023-res-baz-az/main/HOCKING-slides-short.pdf][slides with example test accuracy figures]].
 - Dec 4: reading week, [[file:exams.org][exam review (questions 4-10)]] TODO DATE,
   present your solution for 10 extra credit points toward your exam
   score.
