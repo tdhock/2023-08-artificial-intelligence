@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
   dpi=200,
   fig.width=10,
   fig.height=6)
-Sys.setlocale(locale="C")
+Sys.setlocale("LC_NUMERIC","C")
 conda.env <- "2023-08-artificial-intelligence"
 conda.dir.vec <- c(
   "~/miniconda3",
@@ -326,7 +326,9 @@ show(gg_contour)
   `sklearn.linear_model.LogisticRegressionCV`, which all use the same
   interface.
 - Instantiation: `learner = LogisticRegressionCV()` 
-- Training: `learner.fit(train_X, train_y)`
+- Training: `learner.fit(train_X, train_y)` where `X` is a matrix of
+  `nrow` observations by `ncol` features, and `y` is a vector of
+  labels (one for each row of `X`).
 - Prediction: `learner.predict(test_X)` returns vector of predictions (one
   for each row/observation in `test_X`).
 
@@ -565,7 +567,7 @@ show(plot_neighbors(100))
 
 ---
 
-# Accuracy for each model size
+# Accuracy for each number of neighbors
 
 ```{python}
 all_acc_df = pd.concat(all_acc_df_list)
@@ -589,6 +591,8 @@ show(gg)
 # Two kinds of splits
 
 ![](nested_resampling.png){width=100%}
+
+https://mlr.mlr-org.com/articles/tutorial/nested_resampling.html
 
 ---
 
