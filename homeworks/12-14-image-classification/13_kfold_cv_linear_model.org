@@ -14,7 +14,7 @@ For this project you need to use scikit-learn.
   [[file:../../data/][local copy here]] After using pandas.read_csv,
   remove any rows which have non-01 labels (so we can do binary
   classification).
-- use a for loop over sklearn.model_selection.KFold to iterate over
+- use a for loop over [[https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html][sklearn.model_selection.KFold]] to iterate over
   K=3 train/test sets.
 - Use sklearn.linear_model.LogisticRegressionCV(cv=5) to implement a
   linear model which uses 5-fold cross-validation to choose the
