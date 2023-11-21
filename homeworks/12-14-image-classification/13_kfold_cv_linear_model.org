@@ -11,7 +11,7 @@ For this project you need to use scikit-learn.
 *** Experiments/application
 - Use zip.train data set from
   [[https://web.stanford.edu/~hastie/ElemStatLearn/data.html]],
-  [[file:../data/][local copy here]] After using pandas.read_csv,
+  [[file:../../data/][local copy here]] After using pandas.read_csv,
   remove any rows which have non-01 labels (so we can do binary
   classification).
 - use a for loop over sklearn.model_selection.KFold to iterate over
