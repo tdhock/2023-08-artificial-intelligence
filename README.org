@@ -124,7 +124,7 @@ execution)
   - [[file:slides/13_kfold.pdf][Cross-validation slides]].
 - Nov 27: [[file:homeworks/12-14-image-classification/14_NN.org][Homework week 14]]: Image classification part 2.
   - [[https://raw.githubusercontent.com/tdhock/2023-res-baz-az/main/HOCKING-slides-short.pdf][slides with example test accuracy figures]].
-- Dec 4: reading week, [[file:exams.org][exam review (questions 4-10)]] TODO DATE,
+- Dec 4: reading week, [[file:exams.org][exam review]], Weds Dec 7.
   present your solution for 10 extra credit points toward your exam
   score.
 - Finals week.

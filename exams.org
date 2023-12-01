@@ -39,7 +39,7 @@ Practice exam questions
 9. How can you tell if machine learning model predictions are
    underfitting or overfitting?
 
-10. In gradient descent learning with early stopping regularization,
-    how should the number of epochs/iterations be chosen?
+10. In the nearest neighbors algorithm, how should the number of
+    neighbors be chosen?
     
 
