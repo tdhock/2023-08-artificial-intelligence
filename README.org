@@ -127,9 +127,9 @@ execution)
 - Dec 4: reading week, [[file:exams.org][exam review]], Weds Dec 7.
   present your solution for 10 extra credit points toward your exam
   score.
-- Finals week.
-  - [[file:exams.org][review]].
-  - exam Weds Dec 13, 8-9:30.
+- Finals week, exam Weds Dec 13, 8-9:30.
+  - It will be open-note: during the real exam, you are allowed one sheet of paper, filled in with your own notes, in your own handwriting.
+    
 Homeworks will be graded using this [[https://docs.google.com/document/d/1-owd3uMexZKzdOib9R_CQrwke-BYkIq2-m6Sd1sFNVY/edit#heading=h.pekgvy78tviz][General Usage Rubric]]. 
 
 ** Video Resources
