@@ -42,4 +42,4 @@ Practice exam questions
 10. In the nearest neighbors algorithm, how should the number of
     neighbors be chosen?
     
-
+Extra credit: Kristiana, Kirsten, Chase, Filip, Jake, Nathan.
